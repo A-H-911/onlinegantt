@@ -6,8 +6,6 @@
   </picture>
 </p>
 
-<h1 align="center">onlinegantt</h1>
-
 <p align="center"><strong>Turn a project description, an existing plan or a spreadsheet into a correct <code>.gantt</code> file for onlinegantt.com — interview-driven, scheduled exactly like the site's engine, previewed as HTML and PNG, and verified on the site itself.</strong></p>
 
 <p align="center">
@@ -313,9 +311,10 @@ onlinegantt/
 ├── examples/                         # four real plans: spec → .gantt + HTML + build output
 ├── evals/                            # the four prompts, the grader, inputs, iteration-2 results
 ├── tests/                            # the unittest suite + fixtures (incl. the live engine dump)
-├── docs/assets/                      # README images
+├── docs/                             # assets/: README images · logo/: the logo builder
 ├── check.py                          # THE one gate — CI runs exactly this
-└── .github/workflows/ci.yaml         # check.py on 3.9–3.13 × Linux/Windows + a PNG rendering job
+└── .github/workflows/                # ci.yaml: check.py on 3.9–3.13 × Linux/Windows + a PNG job
+                                      # release.yaml: builds and attaches onlinegantt.skill on release
 ```
 
 ## Verifying a local checkout
@@ -336,8 +335,8 @@ examples. See [`CONTRIBUTING.md`](CONTRIBUTING.md).
 of 2026-09-13 and covered by tests; the interview screens encode the decisions of one team's use and are
 meant to be edited. The skill has no dependencies and does not talk to the network; the site can change
 under it, which `gantt.py verify` (and the engine-fidelity test, given a fresh dump) will show. Releases
-are tagged `vX.Y.Z`, listed in [`CHANGELOG.md`](CHANGELOG.md), and each attaches `onlinegantt.skill`, the
-packaged bundle. `SECURITY.md` states the trust model.
+are tagged `vX.Y.Z`, listed in [`CHANGELOG.md`](CHANGELOG.md), and the release workflow attaches
+`onlinegantt.skill`, the packaged bundle, to each. `SECURITY.md` states the trust model.
 
 ## License
 
