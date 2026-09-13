@@ -65,7 +65,8 @@ class Zone:
             else:
                 raise ValueError(
                     f"Timezone {self.name!r} is not available on this machine (no IANA database). "
-                    "Add \"utcOffset\": \"+HH:MM\" to calendar in the plan spec (e.g. \"+03:00\" for Asia/Riyadh)."
+                    "Add \"utcOffset\": \"+HH:MM\" to calendar in the plan spec (e.g. \"+03:00\" for Asia/Riyadh), "
+                    "or ask the user whether to install the 'tzdata' package (pip install tzdata)."
                 )
 
     # local naive -> aware UTC
@@ -91,6 +92,15 @@ class Zone:
     def js_timezone_offset(self, local: datetime) -> int:
         """Value of JavaScript Date.getTimezoneOffset() (sign inverted): -180 for Riyadh."""
         return -self.offset_minutes(local)
+
+
+def available(name: str) -> bool:
+    """True when `name` can be resolved on this machine without an explicit utcOffset."""
+    try:
+        Zone(name)
+        return True
+    except ValueError:
+        return False
 
 
 def iso_z(utc: datetime) -> str:

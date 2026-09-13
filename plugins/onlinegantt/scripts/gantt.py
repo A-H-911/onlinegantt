@@ -316,7 +316,19 @@ def cmd_name(a) -> int:
     return 0
 
 
+def _utf8_output() -> None:
+    """Print UTF-8 whatever the console code page: the summaries contain arrows, diamonds and Arabic names,
+    and a redirected stdout on Windows defaults to cp1252, which cannot encode them."""
+    for stream in (sys.stdout, sys.stderr):
+        if hasattr(stream, "reconfigure"):
+            try:
+                stream.reconfigure(encoding="utf-8", errors="replace")
+            except (ValueError, AttributeError):  # pragma: no cover - closed or exotic streams
+                pass
+
+
 def main(argv=None) -> int:
+    _utf8_output()
     p = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     sub = p.add_subparsers(dest="cmd", required=True)
 

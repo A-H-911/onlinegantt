@@ -27,7 +27,7 @@ GANTT_PY = os.path.join(SCRIPTS, "gantt.py")
 
 sys.path.insert(0, SCRIPTS)
 
-from ogantt import csvio, gantt_io, inspect as inspect_mod, png as png_mod, preview, recolor  # noqa: E402
+from ogantt import csvio, gantt_io, inspect as inspect_mod, png as png_mod, preview, recolor, tz  # noqa: E402
 from ogantt.model import SpecError, plan_from_spec  # noqa: E402
 from ogantt.schedule import schedule, to_gantt  # noqa: E402
 from ogantt.verify import compare  # noqa: E402
@@ -60,7 +60,9 @@ def local_day(iso_utc, offset_hours):
 
 
 def run_cli(*args, cwd=None):
-    return subprocess.run([sys.executable, GANTT_PY, *args], capture_output=True, text=True, cwd=cwd)
+    # the CLI always prints UTF-8 (gantt.py reconfigures its streams); decode it as such on every platform
+    return subprocess.run([sys.executable, GANTT_PY, *args], capture_output=True, text=True, encoding="utf-8",
+                          errors="replace", cwd=cwd)
 
 
 class EngineFidelity(unittest.TestCase):
@@ -105,6 +107,7 @@ class EngineFidelity(unittest.TestCase):
 
 
 class Calendar(unittest.TestCase):
+    @unittest.skipUnless(tz.available("Europe/London"), "no IANA database (Windows without the tzdata package)")
     def test_timezone_shifts_utc_timestamps(self):
         spec = load(os.path.join(DATA, "engine-fidelity.spec.json"))
         riyadh, _ = build(spec)
