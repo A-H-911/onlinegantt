@@ -1,0 +1,16 @@
+{
+  "eval_id": 3,
+  "eval_name": "spreadsheet-to-plan-and-questions",
+  "prompt": "My team keeps its plan in this spreadsheet export: evals/inputs/team_plan.csv\n\nTurn it into an onlinegantt.com .gantt file I can open on the site, then tell me the critical path and whether anyone is overloaded.\n\nNobody is available to answer questions, so use: timezone Asia/Riyadh, work week Sunday–Thursday, work time 08:00-12:00 and 13:00-17:00, no holidays, English only names, default colours, date format yyyy-MM-dd, week starts Sunday, zoom 0, columns Task ID and Task Name, no allocation units, images: the fit-width PNG, save to the outputs directory given to you with the skill's naming convention (version 1, plan name \"Team Plan\").",
+  "assertions": [
+    "File 'Team Plan v1 2026-09-13.gantt' exists and is JSON with data/resources/advanced",
+    "Skill validator reports 0 errors",
+    "Two phases (Planning, Delivery) and Sign-off is a milestone",
+    "Dependencies from the 'Depends on' column resolve to the right tasks incl. the +2 days lag",
+    "Resources Anas and Sara declared; Requirements workshop has both",
+    "Calendar/settings as requested (Sun–Thu, Riyadh, yyyy-MM-dd, zoom 0, only ID+Name shown)",
+    "Dates: Kickoff on 2026-10-05 08:00 Riyadh, UAT ends 2026-11-02 17:00",
+    "Answer gives the critical path chain and says nobody is overloaded",
+    "A fit-width PNG of the chart was produced (>= 1400 px wide)"
+  ]
+}

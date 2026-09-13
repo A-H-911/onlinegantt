@@ -1,0 +1,57 @@
+{
+ "expectations": [
+  {
+   "text": "File 'Team Plan v1 2026-09-13.gantt' exists and is JSON with data/resources/advanced",
+   "passed": false,
+   "evidence": "iteration-2/eval-3-spreadsheet-to-plan-and-questions/without_skill/run-1/outputs/Team Plan v1.gantt"
+  },
+  {
+   "text": "Skill validator reports 0 errors",
+   "passed": false,
+   "evidence": "14 error(s) - the site will reject or mangle this file"
+  },
+  {
+   "text": "Two phases (Planning, Delivery) and Sign-off is a milestone",
+   "passed": true,
+   "evidence": "phases=['Planning', 'Delivery'] signoff=0"
+  },
+  {
+   "text": "Dependencies from the 'Depends on' column resolve to the right tasks incl. the +2 days lag",
+   "passed": true,
+   "evidence": "rw=2FS so=3FS bu=4FS ua=6FS+2DAYS"
+  },
+  {
+   "text": "Resources Anas and Sara declared; Requirements workshop has both",
+   "passed": true,
+   "evidence": "declared=['Anas', 'Sara']"
+  },
+  {
+   "text": "Calendar/settings as requested (Sun–Thu, Riyadh, yyyy-MM-dd, zoom 0, only ID+Name shown)",
+   "passed": false,
+   "evidence": "{\"ww\": [\"Sunday\", \"Monday\", \"Tuesday\", \"Wednesday\", \"Thursday\"], \"shown\": [], \"zoom\": null}"
+  },
+  {
+   "text": "Dates: Kickoff on 2026-10-05 08:00 Riyadh, UAT ends 2026-11-02 17:00",
+   "passed": false,
+   "evidence": "kickoff=2026-10-05 uat_end=2026-11-02"
+  },
+  {
+   "text": "Answer gives the critical path chain and says nobody is overloaded",
+   "passed": true,
+   "evidence": "# Team Plan v1 – onlinegantt.com file, critical path and workload  ## What I produced  | File | Purpose | |---|---| | `Team Plan v1.gantt` | The plan, ready to open on onlinegantt.com (**Open (.gantt "
+  },
+  {
+   "text": "A fit-width PNG of the chart was produced (>= 1400 px wide)",
+   "passed": true,
+   "evidence": "Team Plan v1.png 1995x594 px"
+  }
+ ],
+ "passed": 5,
+ "total": 9,
+ "summary": {
+  "pass_rate": 0.5556,
+  "passed": 5,
+  "failed": 4,
+  "total": 9
+ }
+}

@@ -1,0 +1,175 @@
+{
+  "name": "Team Plan",
+  "version": 1,
+  "data": [
+    {
+      "TaskID": 1,
+      "TaskName": "Planning",
+      "StartDate": "2026-10-05",
+      "EndDate": "2026-10-08",
+      "Duration": 4,
+      "Progress": 62,
+      "color": "",
+      "Predecessor": null,
+      "resources": null,
+      "info": "<p><br></p>",
+      "DurationUnit": "day",
+      "subtasks": [
+        {
+          "TaskID": 2,
+          "TaskName": "Kickoff",
+          "StartDate": "2026-10-05",
+          "EndDate": "2026-10-05",
+          "Duration": 1,
+          "Progress": 100,
+          "color": "",
+          "Predecessor": null,
+          "resources": [
+            {
+              "resourceId": "Anas",
+              "resourceName": "Anas",
+              "unit": 100
+            }
+          ],
+          "info": "<p><br></p>",
+          "DurationUnit": "day",
+          "subtasks": []
+        },
+        {
+          "TaskID": 3,
+          "TaskName": "Requirements workshop",
+          "StartDate": "2026-10-06",
+          "EndDate": "2026-10-08",
+          "Duration": 3,
+          "Progress": 50,
+          "color": "",
+          "Predecessor": "2FS",
+          "resources": [
+            {
+              "resourceId": "Anas",
+              "resourceName": "Anas",
+              "unit": 100
+            },
+            {
+              "resourceId": "Sara",
+              "resourceName": "Sara",
+              "unit": 100
+            }
+          ],
+          "info": "<p>Two sessions, room B</p>",
+          "DurationUnit": "day",
+          "subtasks": []
+        },
+        {
+          "TaskID": 4,
+          "TaskName": "Sign-off",
+          "StartDate": "2026-10-08",
+          "EndDate": "2026-10-08",
+          "Duration": 0,
+          "Progress": 0,
+          "color": "",
+          "Predecessor": "3FS",
+          "resources": [],
+          "info": "<p><br></p>",
+          "DurationUnit": "day",
+          "subtasks": []
+        }
+      ]
+    },
+    {
+      "TaskID": 5,
+      "TaskName": "Delivery",
+      "StartDate": "2026-10-11",
+      "EndDate": "2026-11-02",
+      "Duration": 17,
+      "Progress": 0,
+      "color": "",
+      "Predecessor": null,
+      "resources": null,
+      "info": "<p><br></p>",
+      "DurationUnit": "day",
+      "subtasks": [
+        {
+          "TaskID": 6,
+          "TaskName": "Build",
+          "StartDate": "2026-10-11",
+          "EndDate": "2026-10-22",
+          "Duration": 10,
+          "Progress": 0,
+          "color": "",
+          "Predecessor": "4FS",
+          "resources": [
+            {
+              "resourceId": "Sara",
+              "resourceName": "Sara",
+              "unit": 100
+            }
+          ],
+          "info": "<p><br></p>",
+          "DurationUnit": "day",
+          "subtasks": []
+        },
+        {
+          "TaskID": 7,
+          "TaskName": "UAT",
+          "StartDate": "2026-10-27",
+          "EndDate": "2026-11-02",
+          "Duration": 5,
+          "Progress": 0,
+          "color": "",
+          "Predecessor": "6FS+2 days",
+          "resources": [
+            {
+              "resourceId": "Anas",
+              "resourceName": "Anas",
+              "unit": 100
+            }
+          ],
+          "info": "<p><br></p>",
+          "DurationUnit": "day",
+          "subtasks": []
+        }
+      ]
+    }
+  ],
+  "resources": [
+    {
+      "resourceId": "Anas",
+      "resourceName": "Anas"
+    },
+    {
+      "resourceId": "Sara",
+      "resourceName": "Sara"
+    }
+  ],
+  "advanced": {
+    "workWeek": [
+      "Sunday",
+      "Monday",
+      "Tuesday",
+      "Wednesday",
+      "Thursday"
+    ],
+    "dayWorkingTime": [
+      {
+        "from": 8,
+        "to": 12
+      },
+      {
+        "from": 13,
+        "to": 17
+      }
+    ],
+    "holidays": [],
+    "timezone": "Asia/Riyadh",
+    "locale": "en",
+    "dateFormat": "yyyy-MM-dd",
+    "weekStartDay": 0,
+    "zoom": 0,
+    "columns": [
+      "TaskID",
+      "TaskName"
+    ],
+    "showUnits": false
+  }
+}

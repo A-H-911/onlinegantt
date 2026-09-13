@@ -1,0 +1,57 @@
+{
+ "expectations": [
+  {
+   "text": "File 'Team Plan v1 2026-09-13.gantt' exists and is JSON with data/resources/advanced",
+   "passed": true,
+   "evidence": "iteration-2/eval-3-spreadsheet-to-plan-and-questions/with_skill/run-1/outputs/Team Plan v1 2026-09-13.gantt"
+  },
+  {
+   "text": "Skill validator reports 0 errors",
+   "passed": true,
+   "evidence": "OK - valid .gantt (0 warning(s), 0 task(s) will move on load)"
+  },
+  {
+   "text": "Two phases (Planning, Delivery) and Sign-off is a milestone",
+   "passed": true,
+   "evidence": "phases=['Planning', 'Delivery'] signoff=0"
+  },
+  {
+   "text": "Dependencies from the 'Depends on' column resolve to the right tasks incl. the +2 days lag",
+   "passed": true,
+   "evidence": "rw=1FS so=2FS bu=3FS ua=4FS+2DAYS"
+  },
+  {
+   "text": "Resources Anas and Sara declared; Requirements workshop has both",
+   "passed": true,
+   "evidence": "declared=['Anas', 'Sara']"
+  },
+  {
+   "text": "Calendar/settings as requested (Sun–Thu, Riyadh, yyyy-MM-dd, zoom 0, only ID+Name shown)",
+   "passed": true,
+   "evidence": "{\"ww\": [\"Sunday\", \"Monday\", \"Tuesday\", \"Wednesday\", \"Thursday\"], \"shown\": [\"Task ID\", \"Task Name\"], \"zoom\": 0}"
+  },
+  {
+   "text": "Dates: Kickoff on 2026-10-05 08:00 Riyadh, UAT ends 2026-11-02 17:00",
+   "passed": true,
+   "evidence": "kickoff=2026-10-05T05:00:00.000Z uat_end=2026-11-02T14:00:00.000Z"
+  },
+  {
+   "text": "Answer gives the critical path chain and says nobody is overloaded",
+   "passed": true,
+   "evidence": "Your spreadsheet is now an onlinegantt.com plan. Files (in the outputs directory):  - `Team Plan v1 2026-09-13.gantt` – open this on the site - `Team Plan v1 2026-09-13.html` – standalone preview - `T"
+  },
+  {
+   "text": "A fit-width PNG of the chart was produced (>= 1400 px wide)",
+   "passed": true,
+   "evidence": "Team Plan v1 2026-09-13.png 3216x722 px"
+  }
+ ],
+ "passed": 9,
+ "total": 9,
+ "summary": {
+  "pass_rate": 1.0,
+  "passed": 9,
+  "failed": 0,
+  "total": 9
+ }
+}
