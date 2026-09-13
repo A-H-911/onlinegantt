@@ -1,0 +1,53 @@
+name: check
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  check:
+    name: python ${{ matrix.python }} on ${{ matrix.os }}
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest]
+        python: ["3.9", "3.10", "3.11", "3.12", "3.13"]
+        include:
+          - os: windows-latest
+            python: "3.12"
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python }}
+      - name: check.py (suites, lint, examples, evals)
+        run: python check.py
+
+  png:
+    name: PNG rendering (Playwright + Chromium)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: python -m pip install playwright && python -m playwright install --with-deps chromium
+      - name: render the reference example
+        run: |
+          python plugins/onlinegantt/scripts/gantt.py preview "examples/website-relaunch/Website Relaunch v1 2026-09-13.gantt" --png fit,day,table -o "${{ runner.temp }}/website-relaunch"
+          python - <<'PY'
+          import glob, os, struct
+          files = sorted(glob.glob(os.path.join(os.environ["RUNNER_TEMP"], "website-relaunch*.png")))
+          assert len(files) == 3, files
+          for f in files:
+              w, h = struct.unpack(">II", open(f, "rb").read(24)[16:24])
+              print(os.path.basename(f), w, h)
+              assert w >= 1400 and h > 200, (f, w, h)
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: website-relaunch-png
+          path: ${{ runner.temp }}/website-relaunch*.png

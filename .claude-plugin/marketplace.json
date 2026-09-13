@@ -1,0 +1,14 @@
+{
+  "name": "onlinegantt",
+  "owner": {
+    "name": "Anas Hammo",
+    "url": "https://github.com/A-H-911"
+  },
+  "plugins": [
+    {
+      "name": "onlinegantt",
+      "source": "./plugins/onlinegantt",
+      "description": "Create, edit, analyse, render and verify project plans for onlinegantt.com as .gantt files - interview-driven, with HTML/PNG previews and a scheduler that matches the site's engine."
+    }
+  ]
+}

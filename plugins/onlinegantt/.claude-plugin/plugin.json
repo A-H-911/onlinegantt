@@ -1,0 +1,13 @@
+{
+  "name": "onlinegantt",
+  "version": "1.0.0",
+  "description": "Create, edit, analyse, render and verify project plans for onlinegantt.com as .gantt files - interview-driven, with HTML/PNG previews and a scheduler that matches the site's engine.",
+  "author": {
+    "name": "Anas Hammo",
+    "url": "https://github.com/A-H-911"
+  },
+  "homepage": "https://github.com/A-H-911/onlinegantt",
+  "repository": "https://github.com/A-H-911/onlinegantt",
+  "license": "MIT",
+  "keywords": ["gantt", "onlinegantt", "project-plan", "schedule", "timeline", "skill", "claude-code", "cowork"]
+}

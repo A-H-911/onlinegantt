@@ -1,0 +1,19 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# editors / OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# scratch output from local builds (examples/ and evals/results/ are committed deliberately)
+/out/
+/scratch/
+*.tmp
+
+# packaged bundle: attached to GitHub Releases, not committed
+/onlinegantt.skill
