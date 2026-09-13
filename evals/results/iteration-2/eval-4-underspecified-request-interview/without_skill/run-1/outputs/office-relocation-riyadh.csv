@@ -1,0 +1,36 @@
+ID,Phase,Task,Type,Owner(s),Start,End,Working days (Sun-Thu),Calendar days,Predecessors,Notes
+1,Phase 1 - Preparation,Phase 1 - Preparation,Phase,,2026-11-15,2026-12-17,25,33,,
+2,Phase 1 - Preparation,Kick-off meeting & move charter,Task,Anas,2026-11-15,2026-11-15,1,1,,"Agree scope, roles, budget envelope and the move weekend with the team."
+3,Phase 1 - Preparation,"Inventory of furniture, equipment & files",Task,Khalid,2026-11-16,2026-11-19,4,4,2FS,Room-by-room list; tag keep / sell / dispose. Feeds the mover quotes and the seating plan.
+4,Phase 1 - Preparation,Order internet & telecom lines for new building,Task,Anas,2026-11-16,2026-11-17,2,2,2FS,Place the ISP / telecom order now - provider lead time is the longest item in the plan.
+5,Phase 1 - Preparation,Request & compare moving company quotes,Task,Sara,2026-11-22,2026-11-26,5,5,3FS,At least three quotes based on the inventory; check insurance and weekend availability.
+6,Phase 1 - Preparation,Space plan & seating chart for new office,Task,Khalid,2026-11-22,2026-11-26,5,5,3FS,Desk-by-desk plan; also fixes where network points and printers go.
+7,Phase 1 - Preparation,Select & sign moving company contract,Task,"Sara, Anas",2026-11-29,2026-11-30,2,2,5FS,"Confirm Fri-Sat 18-19 Dec, crew size, insurance, packing materials included."
+8,Phase 1 - Preparation,Moving company contracted,Milestone,,2026-11-30,2026-11-30,0,0,7FS,
+9,Phase 1 - Preparation,Mover site survey of both offices,Task,"Moving Company, Khalid",2026-12-01,2026-12-02,2,2,8FS,"Walk-through of old and new premises: access, lifts, parking, fragile items."
+10,Phase 1 - Preparation,"Network cabling, Wi-Fi & server room prep at new building",Task,Anas,2026-11-29,2026-12-10,10,12,"4FS,6FS","Patch panel, switches, Wi-Fi access points, printer points; test before move day."
+11,Phase 1 - Preparation,"Book lifts, loading bays & building access for move weekend",Task,Khalid,2026-12-06,2026-12-07,2,2,9FS,"Both building managements: elevator reservation, security passes for mover crew, parking."
+12,Phase 1 - Preparation,Packing materials delivered & labelling scheme issued,Task,"Moving Company, Khalid",2026-12-06,2026-12-07,2,2,9FS,"Boxes, crates, labels colour-coded by zone of the new seating chart."
+13,Phase 1 - Preparation,Change-of-address notifications,Task,Sara,2026-12-06,2026-12-10,5,5,7FS,"Commercial registration / municipality, bank, insurer, clients, suppliers, website, email signatures, Google/Maps listing."
+14,Phase 1 - Preparation,New building IT-ready,Milestone,,2026-12-10,2026-12-10,0,0,10FS,
+15,Phase 1 - Preparation,"Staff packing, archiving & disposal of surplus items",Task,Khalid,2026-12-13,2026-12-16,4,4,12FS,Everyone packs and labels their own desk; archive boxes to storage; surplus items collected.
+16,Phase 1 - Preparation,Pre-move readiness check & go/no-go,Task,Anas,2026-12-17,2026-12-17,1,1,"11FS,13FS,14FS,15FS","Checklist walk-through with the mover: access booked, IT ready, everything labelled."
+17,Phase 1 - Preparation,Go for move,Milestone,,2026-12-17,2026-12-17,0,0,16FS,
+18,Phase 2 - Moving weekend,Phase 2 - Moving weekend,Phase,,2026-12-18,2026-12-19,2,2,,
+19,Phase 2 - Moving weekend,"Back up, shut down & pack IT equipment",Task,Anas,2026-12-18,2026-12-18,1,1,17FS,Full backup verified before anything is unplugged; label every cable.
+20,Phase 2 - Moving weekend,Load & transport furniture and boxes (old office),Task,"Moving Company, Khalid",2026-12-18,2026-12-18,1,1,17FS,Khalid supervises loading at the old office.
+21,Phase 2 - Moving weekend,Unload & place furniture per seating chart (new office),Task,"Moving Company, Sara",2026-12-19,2026-12-19,1,1,20FS,Sara directs placement at the new building using the colour-coded plan.
+22,Phase 2 - Moving weekend,"Reinstall & test IT: network, workstations, printers, phones",Task,Anas,2026-12-19,2026-12-19,1,1,19FS,"Every desk logs in, prints and makes a call before the crew leaves."
+23,Phase 2 - Moving weekend,"Old office sweep, cleaning & lock-up",Task,Khalid,2026-12-19,2026-12-19,1,1,20FS,"Final walk-through, photos for the landlord, meter readings."
+24,Phase 2 - Moving weekend,Move complete,Milestone,,2026-12-19,2026-12-19,0,0,"21FS,22FS,23FS",
+25,Phase 3 - Settling in,Phase 3 - Settling in,Phase,,2026-12-20,2026-12-31,10,12,,
+26,Phase 3 - Settling in,"First working day: orientation, access cards & welcome",Task,Sara,2026-12-20,2026-12-20,1,1,24FS,"Building tour, access cards, parking, emergency exits, where things are."
+27,Phase 3 - Settling in,Unpacking & desk set-up support,Task,Khalid,2026-12-20,2026-12-22,3,3,24FS,Floor-walking help; collect issues into one list.
+28,Phase 3 - Settling in,"IT snag fixing (Wi-Fi, printers, phones, meeting rooms)",Task,Anas,2026-12-20,2026-12-24,5,5,24FS,Daily triage of IT issues during the first week.
+29,Phase 3 - Settling in,Building snag list with landlord & missing items,Task,Khalid,2026-12-23,2026-12-24,2,2,27FS,"Defects, keys, signage, extra furniture - one consolidated list to the landlord."
+30,Phase 3 - Settling in,Collect empty boxes & packing materials,Task,Moving Company,2026-12-23,2026-12-24,2,2,27FS,Mover picks up crates and boxes once unpacking is done.
+31,Phase 3 - Settling in,"Old office handover: final clean, keys returned, deposit",Task,Khalid,2026-12-27,2026-12-29,3,3,"23FS,30FS",Handover inspection with the old landlord; deposit release.
+32,Phase 3 - Settling in,Close mover contract & approve final invoice,Task,Sara,2026-12-27,2026-12-28,2,2,30FS,Reconcile against the quote; log any damage claims.
+33,Phase 3 - Settling in,Old office handed over,Milestone,,2026-12-29,2026-12-29,0,0,31FS,
+34,Phase 3 - Settling in,Move retrospective & project close-out,Task,Anas,2026-12-31,2026-12-31,1,1,"32FS,33FS",30-minute lessons-learned; archive the plan.
+35,Phase 3 - Settling in,Project closed,Milestone,,2026-12-31,2026-12-31,0,0,34FS,

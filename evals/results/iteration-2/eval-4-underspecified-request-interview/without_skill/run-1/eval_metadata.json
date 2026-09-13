@@ -1,0 +1,18 @@
+{
+  "eval_id": 4,
+  "eval_name": "underspecified-request-interview",
+  "prompt": "Create an onlinegantt plan for relocating our office to the new building in Riyadh. Phases: preparation, the moving weekend, and settling in. The team is Anas, Sara and Khalid, plus an external moving company. We want to kick off in mid-November 2026.\n\nTest-harness note: the user is available and wants to be asked, but the AskUserQuestion tool is not available in this run. Whenever you would ask the user something, write the question screens exactly as you would present them — each screen as a heading, then each question with its 2–4 options, the recommended option first and marked (Recommended), and a note when a question is multi-select — into answer.md, in the order you would ask them. Then assume the user picked every recommended option, continue, and write the next thing you would show or ask (proposal tables, the draft for confirmation, and so on) until you reach the build step; then build and finish answer.md with your final summary. Save all outputs to the outputs directory given to you.",
+  "assertions": [
+    "answer.md opens with the shortcut screen (use all recommended values / ask me each question)",
+    "Asks the plan-specific questions: holidays, team/resources, allocation units, images, save location, file name",
+    "Every question is tap-to-select: 2-4 options with a (Recommended) label on the first option (>= 8 questions with labels)",
+    "Multi-select is indicated where several answers apply (holidays, team, images)",
+    "Team question lists Anas, Sara, Khalid and the moving company",
+    "Missing durations/owners are proposed in a table and confirmed with ONE question (use proposals / corrections / task by task)",
+    "Draft with inferred dependencies is confirmed with one question (build as shown / list changes / walk through the links)",
+    "A .gantt file was built after the interview and validates with 0 errors",
+    "Built with the recommended conventions: Asia/Riyadh, bilingual names, movers as a resource, 3 phases",
+    "File name follows '<Plan> v1 2026-09-13.gantt'",
+    "A fit-width PNG of the chart was produced (>= 1400 px wide)"
+  ]
+}

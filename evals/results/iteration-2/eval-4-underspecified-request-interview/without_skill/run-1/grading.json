@@ -1,0 +1,67 @@
+{
+ "expectations": [
+  {
+   "text": "answer.md opens with the shortcut screen (use all recommended values / ask me each question)",
+   "passed": false,
+   "evidence": "# Office relocation to Riyadh — onlinegantt plan  **What I understood:** an office move into a new building in Riyadh, in three phases (preparation → moving weekend → settling in), run by Anas, Sara a"
+  },
+  {
+   "text": "Asks the plan-specific questions: holidays, team/resources, allocation units, images, save location, file name",
+   "passed": false,
+   "evidence": "missing: holidays, allocation units, save location, file name"
+  },
+  {
+   "text": "Every question is tap-to-select: 2-4 options with a (Recommended) label on the first option (>= 8 questions with labels)",
+   "passed": true,
+   "evidence": "11 '(Recommended)' labels, ~1 question lines"
+  },
+  {
+   "text": "Multi-select is indicated where several answers apply (holidays, team, images)",
+   "passed": false,
+   "evidence": "1 multi-select notes"
+  },
+  {
+   "text": "Team question lists Anas, Sara, Khalid and the moving company",
+   "passed": true,
+   "evidence": "names present"
+  },
+  {
+   "text": "Missing durations/owners are proposed in a table and confirmed with ONE question (use proposals / corrections / task by task)",
+   "passed": false,
+   "evidence": "no proposal confirm found"
+  },
+  {
+   "text": "Draft with inferred dependencies is confirmed with one question (build as shown / list changes / walk through the links)",
+   "passed": false,
+   "evidence": "draft confirm present"
+  },
+  {
+   "text": "A .gantt file was built after the interview and validates with 0 errors",
+   "passed": false,
+   "evidence": "error: iteration-2/eval-4-underspecified-request-interview/without_skill/run-1/outputs/office-relocation-riyadh.gantt: a .gantt file must be an object with 'data' and 'resources' (the site requires both)"
+  },
+  {
+   "text": "Built with the recommended conventions: Asia/Riyadh, bilingual names, movers as a resource, 3 phases",
+   "passed": false,
+   "evidence": "no valid .gantt (missing 'data'/'resources')"
+  },
+  {
+   "text": "File name follows '<Plan> v1 2026-09-13.gantt'",
+   "passed": false,
+   "evidence": "office-relocation-riyadh.gantt"
+  },
+  {
+   "text": "A fit-width PNG of the chart was produced (>= 1400 px wide)",
+   "passed": true,
+   "evidence": "office-relocation-riyadh-preview.png 2080x1430 px"
+  }
+ ],
+ "passed": 3,
+ "total": 11,
+ "summary": {
+  "pass_rate": 0.2727,
+  "passed": 3,
+  "failed": 8,
+  "total": 11
+ }
+}

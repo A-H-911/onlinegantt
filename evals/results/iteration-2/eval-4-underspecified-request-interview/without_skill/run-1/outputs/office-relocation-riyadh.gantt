@@ -1,0 +1,657 @@
+{
+  "name": "Office Relocation - Riyadh",
+  "format": "onlinegantt",
+  "version": 1,
+  "createdOn": "2026-09-13",
+  "projectStartDate": "2026-11-15T00:00:00",
+  "projectEndDate": "2026-12-31T00:00:00",
+  "settings": {
+    "includeWeekend": true,
+    "workWeek": [
+      "Sunday",
+      "Monday",
+      "Tuesday",
+      "Wednesday",
+      "Thursday"
+    ],
+    "durationUnit": "day",
+    "dateFormat": "dd/MM/yyyy",
+    "timelineViewMode": "Week",
+    "note": "7-day calendar with explicit dates: the Sun-Thu working week and the Fri-Sat move days are preserved as planned. Durations are calendar days."
+  },
+  "resources": [
+    {
+      "resourceId": 1,
+      "resourceName": "Anas",
+      "resourceGroup": "Internal team"
+    },
+    {
+      "resourceId": 2,
+      "resourceName": "Sara",
+      "resourceGroup": "Internal team"
+    },
+    {
+      "resourceId": 3,
+      "resourceName": "Khalid",
+      "resourceGroup": "Internal team"
+    },
+    {
+      "resourceId": 4,
+      "resourceName": "Moving Company",
+      "resourceGroup": "External"
+    }
+  ],
+  "tasks": [
+    {
+      "TaskID": 1,
+      "TaskName": "Phase 1 - Preparation",
+      "StartDate": "2026-11-15T00:00:00",
+      "EndDate": "2026-12-17T00:00:00",
+      "Duration": 33,
+      "Progress": 0,
+      "Predecessor": "",
+      "Milestone": false,
+      "Notes": "",
+      "resources": [],
+      "Assignee": "",
+      "subtasks": [
+        {
+          "TaskID": 2,
+          "TaskName": "Kick-off meeting & move charter",
+          "StartDate": "2026-11-15T00:00:00",
+          "EndDate": "2026-11-15T00:00:00",
+          "Duration": 1,
+          "Progress": 0,
+          "Predecessor": "",
+          "Milestone": false,
+          "Notes": "Agree scope, roles, budget envelope and the move weekend with the team.",
+          "resources": [
+            {
+              "resourceId": 1,
+              "resourceName": "Anas"
+            }
+          ],
+          "Assignee": "Anas"
+        },
+        {
+          "TaskID": 3,
+          "TaskName": "Inventory of furniture, equipment & files",
+          "StartDate": "2026-11-16T00:00:00",
+          "EndDate": "2026-11-19T00:00:00",
+          "Duration": 4,
+          "Progress": 0,
+          "Predecessor": "2FS",
+          "Milestone": false,
+          "Notes": "Room-by-room list; tag keep / sell / dispose. Feeds the mover quotes and the seating plan.",
+          "resources": [
+            {
+              "resourceId": 3,
+              "resourceName": "Khalid"
+            }
+          ],
+          "Assignee": "Khalid"
+        },
+        {
+          "TaskID": 4,
+          "TaskName": "Order internet & telecom lines for new building",
+          "StartDate": "2026-11-16T00:00:00",
+          "EndDate": "2026-11-17T00:00:00",
+          "Duration": 2,
+          "Progress": 0,
+          "Predecessor": "2FS",
+          "Milestone": false,
+          "Notes": "Place the ISP / telecom order now - provider lead time is the longest item in the plan.",
+          "resources": [
+            {
+              "resourceId": 1,
+              "resourceName": "Anas"
+            }
+          ],
+          "Assignee": "Anas"
+        },
+        {
+          "TaskID": 5,
+          "TaskName": "Request & compare moving company quotes",
+          "StartDate": "2026-11-22T00:00:00",
+          "EndDate": "2026-11-26T00:00:00",
+          "Duration": 5,
+          "Progress": 0,
+          "Predecessor": "3FS",
+          "Milestone": false,
+          "Notes": "At least three quotes based on the inventory; check insurance and weekend availability.",
+          "resources": [
+            {
+              "resourceId": 2,
+              "resourceName": "Sara"
+            }
+          ],
+          "Assignee": "Sara"
+        },
+        {
+          "TaskID": 6,
+          "TaskName": "Space plan & seating chart for new office",
+          "StartDate": "2026-11-22T00:00:00",
+          "EndDate": "2026-11-26T00:00:00",
+          "Duration": 5,
+          "Progress": 0,
+          "Predecessor": "3FS",
+          "Milestone": false,
+          "Notes": "Desk-by-desk plan; also fixes where network points and printers go.",
+          "resources": [
+            {
+              "resourceId": 3,
+              "resourceName": "Khalid"
+            }
+          ],
+          "Assignee": "Khalid"
+        },
+        {
+          "TaskID": 7,
+          "TaskName": "Select & sign moving company contract",
+          "StartDate": "2026-11-29T00:00:00",
+          "EndDate": "2026-11-30T00:00:00",
+          "Duration": 2,
+          "Progress": 0,
+          "Predecessor": "5FS",
+          "Milestone": false,
+          "Notes": "Confirm Fri-Sat 18-19 Dec, crew size, insurance, packing materials included.",
+          "resources": [
+            {
+              "resourceId": 2,
+              "resourceName": "Sara"
+            },
+            {
+              "resourceId": 1,
+              "resourceName": "Anas"
+            }
+          ],
+          "Assignee": "Sara, Anas"
+        },
+        {
+          "TaskID": 8,
+          "TaskName": "Moving company contracted",
+          "StartDate": "2026-11-30T00:00:00",
+          "EndDate": "2026-11-30T00:00:00",
+          "Duration": 0,
+          "Progress": 0,
+          "Predecessor": "7FS",
+          "Milestone": true,
+          "Notes": "",
+          "resources": [],
+          "Assignee": ""
+        },
+        {
+          "TaskID": 9,
+          "TaskName": "Mover site survey of both offices",
+          "StartDate": "2026-12-01T00:00:00",
+          "EndDate": "2026-12-02T00:00:00",
+          "Duration": 2,
+          "Progress": 0,
+          "Predecessor": "8FS",
+          "Milestone": false,
+          "Notes": "Walk-through of old and new premises: access, lifts, parking, fragile items.",
+          "resources": [
+            {
+              "resourceId": 4,
+              "resourceName": "Moving Company"
+            },
+            {
+              "resourceId": 3,
+              "resourceName": "Khalid"
+            }
+          ],
+          "Assignee": "Moving Company, Khalid"
+        },
+        {
+          "TaskID": 10,
+          "TaskName": "Network cabling, Wi-Fi & server room prep at new building",
+          "StartDate": "2026-11-29T00:00:00",
+          "EndDate": "2026-12-10T00:00:00",
+          "Duration": 12,
+          "Progress": 0,
+          "Predecessor": "4FS,6FS",
+          "Milestone": false,
+          "Notes": "Patch panel, switches, Wi-Fi access points, printer points; test before move day.",
+          "resources": [
+            {
+              "resourceId": 1,
+              "resourceName": "Anas"
+            }
+          ],
+          "Assignee": "Anas"
+        },
+        {
+          "TaskID": 11,
+          "TaskName": "Book lifts, loading bays & building access for move weekend",
+          "StartDate": "2026-12-06T00:00:00",
+          "EndDate": "2026-12-07T00:00:00",
+          "Duration": 2,
+          "Progress": 0,
+          "Predecessor": "9FS",
+          "Milestone": false,
+          "Notes": "Both building managements: elevator reservation, security passes for mover crew, parking.",
+          "resources": [
+            {
+              "resourceId": 3,
+              "resourceName": "Khalid"
+            }
+          ],
+          "Assignee": "Khalid"
+        },
+        {
+          "TaskID": 12,
+          "TaskName": "Packing materials delivered & labelling scheme issued",
+          "StartDate": "2026-12-06T00:00:00",
+          "EndDate": "2026-12-07T00:00:00",
+          "Duration": 2,
+          "Progress": 0,
+          "Predecessor": "9FS",
+          "Milestone": false,
+          "Notes": "Boxes, crates, labels colour-coded by zone of the new seating chart.",
+          "resources": [
+            {
+              "resourceId": 4,
+              "resourceName": "Moving Company"
+            },
+            {
+              "resourceId": 3,
+              "resourceName": "Khalid"
+            }
+          ],
+          "Assignee": "Moving Company, Khalid"
+        },
+        {
+          "TaskID": 13,
+          "TaskName": "Change-of-address notifications",
+          "StartDate": "2026-12-06T00:00:00",
+          "EndDate": "2026-12-10T00:00:00",
+          "Duration": 5,
+          "Progress": 0,
+          "Predecessor": "7FS",
+          "Milestone": false,
+          "Notes": "Commercial registration / municipality, bank, insurer, clients, suppliers, website, email signatures, Google/Maps listing.",
+          "resources": [
+            {
+              "resourceId": 2,
+              "resourceName": "Sara"
+            }
+          ],
+          "Assignee": "Sara"
+        },
+        {
+          "TaskID": 14,
+          "TaskName": "New building IT-ready",
+          "StartDate": "2026-12-10T00:00:00",
+          "EndDate": "2026-12-10T00:00:00",
+          "Duration": 0,
+          "Progress": 0,
+          "Predecessor": "10FS",
+          "Milestone": true,
+          "Notes": "",
+          "resources": [],
+          "Assignee": ""
+        },
+        {
+          "TaskID": 15,
+          "TaskName": "Staff packing, archiving & disposal of surplus items",
+          "StartDate": "2026-12-13T00:00:00",
+          "EndDate": "2026-12-16T00:00:00",
+          "Duration": 4,
+          "Progress": 0,
+          "Predecessor": "12FS",
+          "Milestone": false,
+          "Notes": "Everyone packs and labels their own desk; archive boxes to storage; surplus items collected.",
+          "resources": [
+            {
+              "resourceId": 3,
+              "resourceName": "Khalid"
+            }
+          ],
+          "Assignee": "Khalid"
+        },
+        {
+          "TaskID": 16,
+          "TaskName": "Pre-move readiness check & go/no-go",
+          "StartDate": "2026-12-17T00:00:00",
+          "EndDate": "2026-12-17T00:00:00",
+          "Duration": 1,
+          "Progress": 0,
+          "Predecessor": "11FS,13FS,14FS,15FS",
+          "Milestone": false,
+          "Notes": "Checklist walk-through with the mover: access booked, IT ready, everything labelled.",
+          "resources": [
+            {
+              "resourceId": 1,
+              "resourceName": "Anas"
+            }
+          ],
+          "Assignee": "Anas"
+        },
+        {
+          "TaskID": 17,
+          "TaskName": "Go for move",
+          "StartDate": "2026-12-17T00:00:00",
+          "EndDate": "2026-12-17T00:00:00",
+          "Duration": 0,
+          "Progress": 0,
+          "Predecessor": "16FS",
+          "Milestone": true,
+          "Notes": "",
+          "resources": [],
+          "Assignee": ""
+        }
+      ]
+    },
+    {
+      "TaskID": 18,
+      "TaskName": "Phase 2 - Moving weekend",
+      "StartDate": "2026-12-18T00:00:00",
+      "EndDate": "2026-12-19T00:00:00",
+      "Duration": 2,
+      "Progress": 0,
+      "Predecessor": "",
+      "Milestone": false,
+      "Notes": "",
+      "resources": [],
+      "Assignee": "",
+      "subtasks": [
+        {
+          "TaskID": 19,
+          "TaskName": "Back up, shut down & pack IT equipment",
+          "StartDate": "2026-12-18T00:00:00",
+          "EndDate": "2026-12-18T00:00:00",
+          "Duration": 1,
+          "Progress": 0,
+          "Predecessor": "17FS",
+          "Milestone": false,
+          "Notes": "Full backup verified before anything is unplugged; label every cable.",
+          "resources": [
+            {
+              "resourceId": 1,
+              "resourceName": "Anas"
+            }
+          ],
+          "Assignee": "Anas"
+        },
+        {
+          "TaskID": 20,
+          "TaskName": "Load & transport furniture and boxes (old office)",
+          "StartDate": "2026-12-18T00:00:00",
+          "EndDate": "2026-12-18T00:00:00",
+          "Duration": 1,
+          "Progress": 0,
+          "Predecessor": "17FS",
+          "Milestone": false,
+          "Notes": "Khalid supervises loading at the old office.",
+          "resources": [
+            {
+              "resourceId": 4,
+              "resourceName": "Moving Company"
+            },
+            {
+              "resourceId": 3,
+              "resourceName": "Khalid"
+            }
+          ],
+          "Assignee": "Moving Company, Khalid"
+        },
+        {
+          "TaskID": 21,
+          "TaskName": "Unload & place furniture per seating chart (new office)",
+          "StartDate": "2026-12-19T00:00:00",
+          "EndDate": "2026-12-19T00:00:00",
+          "Duration": 1,
+          "Progress": 0,
+          "Predecessor": "20FS",
+          "Milestone": false,
+          "Notes": "Sara directs placement at the new building using the colour-coded plan.",
+          "resources": [
+            {
+              "resourceId": 4,
+              "resourceName": "Moving Company"
+            },
+            {
+              "resourceId": 2,
+              "resourceName": "Sara"
+            }
+          ],
+          "Assignee": "Moving Company, Sara"
+        },
+        {
+          "TaskID": 22,
+          "TaskName": "Reinstall & test IT: network, workstations, printers, phones",
+          "StartDate": "2026-12-19T00:00:00",
+          "EndDate": "2026-12-19T00:00:00",
+          "Duration": 1,
+          "Progress": 0,
+          "Predecessor": "19FS",
+          "Milestone": false,
+          "Notes": "Every desk logs in, prints and makes a call before the crew leaves.",
+          "resources": [
+            {
+              "resourceId": 1,
+              "resourceName": "Anas"
+            }
+          ],
+          "Assignee": "Anas"
+        },
+        {
+          "TaskID": 23,
+          "TaskName": "Old office sweep, cleaning & lock-up",
+          "StartDate": "2026-12-19T00:00:00",
+          "EndDate": "2026-12-19T00:00:00",
+          "Duration": 1,
+          "Progress": 0,
+          "Predecessor": "20FS",
+          "Milestone": false,
+          "Notes": "Final walk-through, photos for the landlord, meter readings.",
+          "resources": [
+            {
+              "resourceId": 3,
+              "resourceName": "Khalid"
+            }
+          ],
+          "Assignee": "Khalid"
+        },
+        {
+          "TaskID": 24,
+          "TaskName": "Move complete",
+          "StartDate": "2026-12-19T00:00:00",
+          "EndDate": "2026-12-19T00:00:00",
+          "Duration": 0,
+          "Progress": 0,
+          "Predecessor": "21FS,22FS,23FS",
+          "Milestone": true,
+          "Notes": "",
+          "resources": [],
+          "Assignee": ""
+        }
+      ]
+    },
+    {
+      "TaskID": 25,
+      "TaskName": "Phase 3 - Settling in",
+      "StartDate": "2026-12-20T00:00:00",
+      "EndDate": "2026-12-31T00:00:00",
+      "Duration": 12,
+      "Progress": 0,
+      "Predecessor": "",
+      "Milestone": false,
+      "Notes": "",
+      "resources": [],
+      "Assignee": "",
+      "subtasks": [
+        {
+          "TaskID": 26,
+          "TaskName": "First working day: orientation, access cards & welcome",
+          "StartDate": "2026-12-20T00:00:00",
+          "EndDate": "2026-12-20T00:00:00",
+          "Duration": 1,
+          "Progress": 0,
+          "Predecessor": "24FS",
+          "Milestone": false,
+          "Notes": "Building tour, access cards, parking, emergency exits, where things are.",
+          "resources": [
+            {
+              "resourceId": 2,
+              "resourceName": "Sara"
+            }
+          ],
+          "Assignee": "Sara"
+        },
+        {
+          "TaskID": 27,
+          "TaskName": "Unpacking & desk set-up support",
+          "StartDate": "2026-12-20T00:00:00",
+          "EndDate": "2026-12-22T00:00:00",
+          "Duration": 3,
+          "Progress": 0,
+          "Predecessor": "24FS",
+          "Milestone": false,
+          "Notes": "Floor-walking help; collect issues into one list.",
+          "resources": [
+            {
+              "resourceId": 3,
+              "resourceName": "Khalid"
+            }
+          ],
+          "Assignee": "Khalid"
+        },
+        {
+          "TaskID": 28,
+          "TaskName": "IT snag fixing (Wi-Fi, printers, phones, meeting rooms)",
+          "StartDate": "2026-12-20T00:00:00",
+          "EndDate": "2026-12-24T00:00:00",
+          "Duration": 5,
+          "Progress": 0,
+          "Predecessor": "24FS",
+          "Milestone": false,
+          "Notes": "Daily triage of IT issues during the first week.",
+          "resources": [
+            {
+              "resourceId": 1,
+              "resourceName": "Anas"
+            }
+          ],
+          "Assignee": "Anas"
+        },
+        {
+          "TaskID": 29,
+          "TaskName": "Building snag list with landlord & missing items",
+          "StartDate": "2026-12-23T00:00:00",
+          "EndDate": "2026-12-24T00:00:00",
+          "Duration": 2,
+          "Progress": 0,
+          "Predecessor": "27FS",
+          "Milestone": false,
+          "Notes": "Defects, keys, signage, extra furniture - one consolidated list to the landlord.",
+          "resources": [
+            {
+              "resourceId": 3,
+              "resourceName": "Khalid"
+            }
+          ],
+          "Assignee": "Khalid"
+        },
+        {
+          "TaskID": 30,
+          "TaskName": "Collect empty boxes & packing materials",
+          "StartDate": "2026-12-23T00:00:00",
+          "EndDate": "2026-12-24T00:00:00",
+          "Duration": 2,
+          "Progress": 0,
+          "Predecessor": "27FS",
+          "Milestone": false,
+          "Notes": "Mover picks up crates and boxes once unpacking is done.",
+          "resources": [
+            {
+              "resourceId": 4,
+              "resourceName": "Moving Company"
+            }
+          ],
+          "Assignee": "Moving Company"
+        },
+        {
+          "TaskID": 31,
+          "TaskName": "Old office handover: final clean, keys returned, deposit",
+          "StartDate": "2026-12-27T00:00:00",
+          "EndDate": "2026-12-29T00:00:00",
+          "Duration": 3,
+          "Progress": 0,
+          "Predecessor": "23FS,30FS",
+          "Milestone": false,
+          "Notes": "Handover inspection with the old landlord; deposit release.",
+          "resources": [
+            {
+              "resourceId": 3,
+              "resourceName": "Khalid"
+            }
+          ],
+          "Assignee": "Khalid"
+        },
+        {
+          "TaskID": 32,
+          "TaskName": "Close mover contract & approve final invoice",
+          "StartDate": "2026-12-27T00:00:00",
+          "EndDate": "2026-12-28T00:00:00",
+          "Duration": 2,
+          "Progress": 0,
+          "Predecessor": "30FS",
+          "Milestone": false,
+          "Notes": "Reconcile against the quote; log any damage claims.",
+          "resources": [
+            {
+              "resourceId": 2,
+              "resourceName": "Sara"
+            }
+          ],
+          "Assignee": "Sara"
+        },
+        {
+          "TaskID": 33,
+          "TaskName": "Old office handed over",
+          "StartDate": "2026-12-29T00:00:00",
+          "EndDate": "2026-12-29T00:00:00",
+          "Duration": 0,
+          "Progress": 0,
+          "Predecessor": "31FS",
+          "Milestone": true,
+          "Notes": "",
+          "resources": [],
+          "Assignee": ""
+        },
+        {
+          "TaskID": 34,
+          "TaskName": "Move retrospective & project close-out",
+          "StartDate": "2026-12-31T00:00:00",
+          "EndDate": "2026-12-31T00:00:00",
+          "Duration": 1,
+          "Progress": 0,
+          "Predecessor": "32FS,33FS",
+          "Milestone": false,
+          "Notes": "30-minute lessons-learned; archive the plan.",
+          "resources": [
+            {
+              "resourceId": 1,
+              "resourceName": "Anas"
+            }
+          ],
+          "Assignee": "Anas"
+        },
+        {
+          "TaskID": 35,
+          "TaskName": "Project closed",
+          "StartDate": "2026-12-31T00:00:00",
+          "EndDate": "2026-12-31T00:00:00",
+          "Duration": 0,
+          "Progress": 0,
+          "Predecessor": "34FS",
+          "Milestone": true,
+          "Notes": "",
+          "resources": [],
+          "Assignee": ""
+        }
+      ]
+    }
+  ]
+}
