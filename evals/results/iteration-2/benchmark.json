@@ -1,0 +1,666 @@
+{
+ "metadata": {
+  "skill_name": "onlinegantt",
+  "skill_path": "plugins/onlinegantt",
+  "executor_model": "Claude subagents launched from a Cowork session (configured model id claude-fable-5-1)",
+  "analyzer_model": "programmatic grader (evals/grade.py) + the same session",
+  "timestamp": "2026-09-13T02:20:11Z",
+  "evals_run": [
+   1,
+   2,
+   3,
+   4
+  ],
+  "runs_per_configuration": 1
+ },
+ "runs": [
+  {
+   "eval_id": 1,
+   "configuration": "with_skill",
+   "run_number": 1,
+   "result": {
+    "pass_rate": 1.0,
+    "passed": 15,
+    "failed": 0,
+    "total": 15,
+    "time_seconds": 118.2,
+    "tokens": 87144,
+    "tool_calls": 0,
+    "errors": 0
+   },
+   "expectations": [
+    {
+     "text": "A .gantt file exists and is JSON with data/resources/advanced",
+     "passed": true,
+     "evidence": "evals/results/iteration-2/eval-1-create-from-prose/with_skill/run-1/outputs/Wafi Mobile Banking App Launch v1 2026-09-13.gantt"
+    },
+    {
+     "text": "Skill validator reports 0 errors (site would load it unchanged)",
+     "passed": true,
+     "evidence": "OK - valid .gantt (0 warning(s), 0 task(s) will move on load)"
+    },
+    {
+     "text": "All StartDate/EndDate are UTC ISO strings with time (…T05:00:00.000Z)",
+     "passed": true,
+     "evidence": "['2026-11-01T05:00:00.000Z', '2026-11-01T05:00:00.000Z', '2026-11-01T05:00:00.000Z']"
+    },
+    {
+     "text": "Calendar: Sun–Thu work week, Asia/Riyadh, 8-12/13-17",
+     "passed": true,
+     "evidence": "{\"workWeek\": [\"Sunday\", \"Monday\", \"Tuesday\", \"Wednesday\", \"Thursday\"], \"timezone\": \"Asia/Riyadh\", \"workTime\": [{\"from\": 8, \"to\": 12}, {\"from\": 13, \"to\": 17}]}"
+    },
+    {
+     "text": "Settings: dateFormat dd/MM/yyyy, firstDayOfWeek 0, zoomLevel 1",
+     "passed": true,
+     "evidence": "{\"dateFormat\": \"dd/MM/yyyy\", \"firstDayOfWeek\": 0, \"zoomLevel\": 1}"
+    },
+    {
+     "text": "advanced.columns uses the site's 10 {name,width,show} entries with ID/Task Name/Start/End/Resources shown",
+     "passed": true,
+     "evidence": "['Task ID', 'Task Name', 'Start Date', 'End Date', 'Resources']"
+    },
+    {
+     "text": "Holidays 22–23 Nov stored as ISO from/to",
+     "passed": true,
+     "evidence": "[{\"from\": \"2026-11-21T21:00:00.000Z\", \"to\": \"2026-11-22T21:00:00.000Z\"}]"
+    },
+    {
+     "text": "Structure: 4 phases, 3 milestones, 9 work tasks; parents have Predecessor null",
+     "passed": true,
+     "evidence": "phases=4 milestones=3 leaves=12"
+    },
+    {
+     "text": "Mobile app starts 5 working days after Backend starts (SS+5 days link) and integration testing depends on both",
+     "passed": true,
+     "evidence": "mobile=10SS+5DAYS integration=10FS,11FS"
+    },
+    {
+     "text": "Resources Anas/Sara/Layla/Omar declared and every assignment references a declared resource",
+     "passed": true,
+     "evidence": "declared=['Anas', 'Layla', 'Omar', 'Sara'] used=['Anas', 'Layla', 'Omar', 'Sara']"
+    },
+    {
+     "text": "Task names are bilingual (Arabic script and an en dash)",
+     "passed": true,
+     "evidence": "Stakeholder workshops – ورش عمل أصحاب المصلحة"
+    },
+    {
+     "text": "Colours are palette hues and differ per phase",
+     "passed": true,
+     "evidence": "[{'211'}, {'121'}, {'31'}, {'271'}]"
+    },
+    {
+     "text": "File name follows '<Plan> v1 2026-09-13.gantt'",
+     "passed": true,
+     "evidence": "Wafi Mobile Banking App Launch v1 2026-09-13.gantt"
+    },
+    {
+     "text": "Answer states finish 7 Feb 2027, a critical path, and no over-allocation",
+     "passed": true,
+     "evidence": "The Wafi launch plan is built, validated (0 warnings, no task will move when the site loads it) and saved in your outputs directory:  - `Wafi Mobile Banking App Launch v1 2026-09-13.gantt` – open this on onlinegantt.com - `Wafi Mobile Banking App Launch v1 2026-09-13.html` – preview - `Wafi Mobile B"
+    },
+    {
+     "text": "A fit-width PNG of the chart was produced (>= 1400 px wide)",
+     "passed": true,
+     "evidence": "Wafi Mobile Banking App Launch v1 2026-09-13.png 3216x1262 px"
+    }
+   ],
+   "notes": []
+  },
+  {
+   "eval_id": 2,
+   "configuration": "with_skill",
+   "run_number": 1,
+   "result": {
+    "pass_rate": 1.0,
+    "passed": 10,
+    "failed": 0,
+    "total": 10,
+    "time_seconds": 183.5,
+    "tokens": 88681,
+    "tool_calls": 0,
+    "errors": 0
+   },
+   "expectations": [
+    {
+     "text": "Output is 'Website Relaunch v2 2026-09-13.gantt' and the original file is untouched",
+     "passed": true,
+     "evidence": "Website Relaunch v2 2026-09-13.gantt"
+    },
+    {
+     "text": "Skill validator: 0 errors and 0 tasks drift on load",
+     "passed": true,
+     "evidence": "OK - valid .gantt (0 warning(s), 0 task(s) will move on load)"
+    },
+    {
+     "text": "QA phase with Test plan (3d Anas), Functional testing (6d Sara), Bug fixing (4d Sara)",
+     "passed": true,
+     "evidence": "qa children=['Test plan – خطة الاختبار', 'Functional testing – الاختبار الوظيفي', 'Bug fixing – إصلاح الأخطاء']"
+    },
+    {
+     "text": "Links: Test plan after 10FS,11FS; Functional → Test plan; Bug fixing → Functional; Go live → Bug fixing",
+     "passed": true,
+     "evidence": "tp=10FS,11FS ft=14FS bf=15FS go=16FS"
+    },
+    {
+     "text": "Content audit progress is 100",
+     "passed": true,
+     "evidence": "100"
+    },
+    {
+     "text": "CMS setup reassigned to Anas",
+     "passed": true,
+     "evidence": "[{'resourceId': 'Anas', 'resourceName': 'Anas', 'unit': 100}]"
+    },
+    {
+     "text": "advanced settings identical to v1",
+     "passed": true,
+     "evidence": "same"
+    },
+    {
+     "text": "Existing tasks 1–11 keep their ids, names, colours and dates",
+     "passed": true,
+     "evidence": "unchanged"
+    },
+    {
+     "text": "Answer states the new finish date 13 Dec 2026",
+     "passed": true,
+     "evidence": "Done – the plan is saved as version 2 (the original v1 file is untouched):  - `evals/results/iteration-2/eval-2-edit-existing-plan/with_skill/run-1/outputs/Website Relaunch v2 202"
+    },
+    {
+     "text": "A fit-width PNG of the chart was produced (>= 1400 px wide)",
+     "passed": true,
+     "evidence": "Website Relaunch v2 2026-09-13.png 3216x1262 px"
+    }
+   ],
+   "notes": []
+  },
+  {
+   "eval_id": 3,
+   "configuration": "with_skill",
+   "run_number": 1,
+   "result": {
+    "pass_rate": 1.0,
+    "passed": 9,
+    "failed": 0,
+    "total": 9,
+    "time_seconds": 83.6,
+    "tokens": 78225,
+    "tool_calls": 0,
+    "errors": 0
+   },
+   "expectations": [
+    {
+     "text": "File 'Team Plan v1 2026-09-13.gantt' exists and is JSON with data/resources/advanced",
+     "passed": true,
+     "evidence": "evals/results/iteration-2/eval-3-spreadsheet-to-plan-and-questions/with_skill/run-1/outputs/Team Plan v1 2026-09-13.gantt"
+    },
+    {
+     "text": "Skill validator reports 0 errors",
+     "passed": true,
+     "evidence": "OK - valid .gantt (0 warning(s), 0 task(s) will move on load)"
+    },
+    {
+     "text": "Two phases (Planning, Delivery) and Sign-off is a milestone",
+     "passed": true,
+     "evidence": "phases=['Planning', 'Delivery'] signoff=0"
+    },
+    {
+     "text": "Dependencies from the 'Depends on' column resolve to the right tasks incl. the +2 days lag",
+     "passed": true,
+     "evidence": "rw=1FS so=2FS bu=3FS ua=4FS+2DAYS"
+    },
+    {
+     "text": "Resources Anas and Sara declared; Requirements workshop has both",
+     "passed": true,
+     "evidence": "declared=['Anas', 'Sara']"
+    },
+    {
+     "text": "Calendar/settings as requested (Sun–Thu, Riyadh, yyyy-MM-dd, zoom 0, only ID+Name shown)",
+     "passed": true,
+     "evidence": "{\"ww\": [\"Sunday\", \"Monday\", \"Tuesday\", \"Wednesday\", \"Thursday\"], \"shown\": [\"Task ID\", \"Task Name\"], \"zoom\": 0}"
+    },
+    {
+     "text": "Dates: Kickoff on 2026-10-05 08:00 Riyadh, UAT ends 2026-11-02 17:00",
+     "passed": true,
+     "evidence": "kickoff=2026-10-05T05:00:00.000Z uat_end=2026-11-02T14:00:00.000Z"
+    },
+    {
+     "text": "Answer gives the critical path chain and says nobody is overloaded",
+     "passed": true,
+     "evidence": "Your spreadsheet is now an onlinegantt.com plan. Files (in the outputs directory):  - `Team Plan v1 2026-09-13.gantt` – open this on the site - `Team Plan v1 2026-09-13.html` – standalone preview - `T"
+    },
+    {
+     "text": "A fit-width PNG of the chart was produced (>= 1400 px wide)",
+     "passed": true,
+     "evidence": "Team Plan v1 2026-09-13.png 3216x722 px"
+    }
+   ],
+   "notes": []
+  },
+  {
+   "eval_id": 4,
+   "configuration": "with_skill",
+   "run_number": 1,
+   "result": {
+    "pass_rate": 1.0,
+    "passed": 11,
+    "failed": 0,
+    "total": 11,
+    "time_seconds": 441.5,
+    "tokens": 111329,
+    "tool_calls": 0,
+    "errors": 0
+   },
+   "expectations": [
+    {
+     "text": "answer.md opens with the shortcut screen (use all recommended values / ask me each question)",
+     "passed": true,
+     "evidence": "# Riyadh office relocation – onlinegantt plan (interview transcript and result)  What the request settles: three phases (Preparation → Moving weekend → Settling in), the team (Anas, Sara, Khalid + an "
+    },
+    {
+     "text": "Asks the plan-specific questions: holidays, team/resources, allocation units, images, save location, file name",
+     "passed": true,
+     "evidence": "all present"
+    },
+    {
+     "text": "Every question is tap-to-select: 2-4 options with a (Recommended) label on the first option (>= 8 questions with labels)",
+     "passed": true,
+     "evidence": "13 '(Recommended)' labels, ~6 question lines"
+    },
+    {
+     "text": "Multi-select is indicated where several answers apply (holidays, team, images)",
+     "passed": true,
+     "evidence": "3 multi-select notes"
+    },
+    {
+     "text": "Team question lists Anas, Sara, Khalid and the moving company",
+     "passed": true,
+     "evidence": "names present"
+    },
+    {
+     "text": "Missing durations/owners are proposed in a table and confirmed with ONE question (use proposals / corrections / task by task)",
+     "passed": true,
+     "evidence": "proposal table + confirm present"
+    },
+    {
+     "text": "Draft with inferred dependencies is confirmed with one question (build as shown / list changes / walk through the links)",
+     "passed": true,
+     "evidence": "draft confirm present"
+    },
+    {
+     "text": "A .gantt file was built after the interview and validates with 0 errors",
+     "passed": true,
+     "evidence": "OK - valid .gantt (0 warning(s), 0 task(s) will move on load)"
+    },
+    {
+     "text": "Built with the recommended conventions: Asia/Riyadh, bilingual names, movers as a resource, 3 phases",
+     "passed": true,
+     "evidence": "tz=Asia/Riyadh phases=3 resources=['Anas', 'Khalid', 'Moving company (external)', 'Sara']"
+    },
+    {
+     "text": "File name follows '<Plan> v1 2026-09-13.gantt'",
+     "passed": true,
+     "evidence": "Riyadh Office Relocation v1 2026-09-13.gantt"
+    },
+    {
+     "text": "A fit-width PNG of the chart was produced (>= 1400 px wide)",
+     "passed": true,
+     "evidence": "Riyadh Office Relocation v1 2026-09-13.png 3216x2102 px"
+    }
+   ],
+   "notes": []
+  },
+  {
+   "eval_id": 1,
+   "configuration": "without_skill",
+   "run_number": 1,
+   "result": {
+    "pass_rate": 0.5333,
+    "passed": 8,
+    "failed": 7,
+    "total": 15,
+    "time_seconds": 768.2,
+    "tokens": 209113,
+    "tool_calls": 0,
+    "errors": 0
+   },
+   "expectations": [
+    {
+     "text": "A .gantt file exists and is JSON with data/resources/advanced",
+     "passed": true,
+     "evidence": "evals/results/iteration-2/eval-1-create-from-prose/without_skill/run-1/outputs/Wafi-App-Launch-Plan-v1.gantt"
+    },
+    {
+     "text": "Skill validator reports 0 errors (site would load it unchanged)",
+     "passed": false,
+     "evidence": "45 error(s) - the site will reject or mangle this file"
+    },
+    {
+     "text": "All StartDate/EndDate are UTC ISO strings with time (…T05:00:00.000Z)",
+     "passed": false,
+     "evidence": "['2026-11-01', '2026-11-01', '2026-11-01']"
+    },
+    {
+     "text": "Calendar: Sun–Thu work week, Asia/Riyadh, 8-12/13-17",
+     "passed": true,
+     "evidence": "{\"workWeek\": [\"Sunday\", \"Monday\", \"Tuesday\", \"Wednesday\", \"Thursday\"], \"timezone\": \"Asia/Riyadh\", \"workTime\": [{\"from\": 8, \"to\": 12}, {\"from\": 13, \"to\": 17}]}"
+    },
+    {
+     "text": "Settings: dateFormat dd/MM/yyyy, firstDayOfWeek 0, zoomLevel 1",
+     "passed": false,
+     "evidence": "{\"dateFormat\": \"dd/MM/yyyy\", \"firstDayOfWeek\": \"Sunday\", \"zoomLevel\": 1}"
+    },
+    {
+     "text": "advanced.columns uses the site's 10 {name,width,show} entries with ID/Task Name/Start/End/Resources shown",
+     "passed": false,
+     "evidence": "[]"
+    },
+    {
+     "text": "Holidays 22–23 Nov stored as ISO from/to",
+     "passed": false,
+     "evidence": "[{\"from\": \"2026-11-22\", \"to\": \"2026-11-23\", \"label\": \"Holiday \\\\u2013 \\\\u0639\\\\u0637\\\\u0644\\\\u0629\"}]"
+    },
+    {
+     "text": "Structure: 4 phases, 3 milestones, 9 work tasks; parents have Predecessor null",
+     "passed": true,
+     "evidence": "phases=4 milestones=3 leaves=12"
+    },
+    {
+     "text": "Mobile app starts 5 working days after Backend starts (SS+5 days link) and integration testing depends on both",
+     "passed": true,
+     "evidence": "mobile=10SS+5DAYS integration=10FS,11FS"
+    },
+    {
+     "text": "Resources Anas/Sara/Layla/Omar declared and every assignment references a declared resource",
+     "passed": true,
+     "evidence": "declared=['Anas', 'Layla', 'Omar', 'Sara'] used=['Anas', 'Layla', 'Omar', 'Sara']"
+    },
+    {
+     "text": "Task names are bilingual (Arabic script and an en dash)",
+     "passed": true,
+     "evidence": "Stakeholder workshops – ورش عمل أصحاب المصلحة"
+    },
+    {
+     "text": "Colours are palette hues and differ per phase",
+     "passed": false,
+     "evidence": "[{'211'}, {'280'}, {'140'}, {'25'}]"
+    },
+    {
+     "text": "File name follows '<Plan> v1 2026-09-13.gantt'",
+     "passed": false,
+     "evidence": "Wafi-App-Launch-Plan-v1.gantt"
+    },
+    {
+     "text": "Answer states finish 7 Feb 2027, a critical path, and no over-allocation",
+     "passed": true,
+     "evidence": "The Wafi launch plan is built and saved as version 1:  - `Wafi-App-Launch-Plan-v1.gantt` — the onlinegantt.com plan (open it with **Open (.gantt file)** at onlinegantt.com) - `Wafi-App-Launch-Plan-v1.png` — fit-width PNG of the chart (weekly timeline, Sunday-start weeks, Fri/Sat and the 22–23 Nov ho"
+    },
+    {
+     "text": "A fit-width PNG of the chart was produced (>= 1400 px wide)",
+     "passed": true,
+     "evidence": "Wafi-App-Launch-Plan-v1.png 2348x752 px"
+    }
+   ],
+   "notes": []
+  },
+  {
+   "eval_id": 2,
+   "configuration": "without_skill",
+   "run_number": 1,
+   "result": {
+    "pass_rate": 1.0,
+    "passed": 10,
+    "failed": 0,
+    "total": 10,
+    "time_seconds": 319.1,
+    "tokens": 88959,
+    "tool_calls": 0,
+    "errors": 0
+   },
+   "expectations": [
+    {
+     "text": "Output is 'Website Relaunch v2 2026-09-13.gantt' and the original file is untouched",
+     "passed": true,
+     "evidence": "Website Relaunch v2 2026-09-13.gantt"
+    },
+    {
+     "text": "Skill validator: 0 errors and 0 tasks drift on load",
+     "passed": true,
+     "evidence": "OK - valid .gantt (0 warning(s), 0 task(s) will move on load)"
+    },
+    {
+     "text": "QA phase with Test plan (3d Anas), Functional testing (6d Sara), Bug fixing (4d Sara)",
+     "passed": true,
+     "evidence": "qa children=['Test plan – خطة الاختبار', 'Functional testing – الاختبار الوظيفي', 'Bug fixing – إصلاح الأخطاء']"
+    },
+    {
+     "text": "Links: Test plan after 10FS,11FS; Functional → Test plan; Bug fixing → Functional; Go live → Bug fixing",
+     "passed": true,
+     "evidence": "tp=10FS,11FS ft=14FS bf=15FS go=16FS"
+    },
+    {
+     "text": "Content audit progress is 100",
+     "passed": true,
+     "evidence": "100"
+    },
+    {
+     "text": "CMS setup reassigned to Anas",
+     "passed": true,
+     "evidence": "[{'resourceId': 'Anas', 'resourceName': 'Anas', 'unit': 100}]"
+    },
+    {
+     "text": "advanced settings identical to v1",
+     "passed": true,
+     "evidence": "same"
+    },
+    {
+     "text": "Existing tasks 1–11 keep their ids, names, colours and dates",
+     "passed": true,
+     "evidence": "unchanged"
+    },
+    {
+     "text": "Answer states the new finish date 13 Dec 2026",
+     "passed": true,
+     "evidence": "Done. The updated plan is saved as **Website Relaunch v2 2026-09-13.gantt** (the original v1 file is untouched), with a fit-width chart in **Website Relaunch v2 2026-09-13.png**.  ## New finish date  "
+    },
+    {
+     "text": "A fit-width PNG of the chart was produced (>= 1400 px wide)",
+     "passed": true,
+     "evidence": "Website Relaunch v2 2026-09-13.png 2600x812 px"
+    }
+   ],
+   "notes": []
+  },
+  {
+   "eval_id": 3,
+   "configuration": "without_skill",
+   "run_number": 1,
+   "result": {
+    "pass_rate": 0.5556,
+    "passed": 5,
+    "failed": 4,
+    "total": 9,
+    "time_seconds": 831.1,
+    "tokens": 184693,
+    "tool_calls": 0,
+    "errors": 0
+   },
+   "expectations": [
+    {
+     "text": "File 'Team Plan v1 2026-09-13.gantt' exists and is JSON with data/resources/advanced",
+     "passed": false,
+     "evidence": "evals/results/iteration-2/eval-3-spreadsheet-to-plan-and-questions/without_skill/run-1/outputs/Team Plan v1.gantt"
+    },
+    {
+     "text": "Skill validator reports 0 errors",
+     "passed": false,
+     "evidence": "14 error(s) - the site will reject or mangle this file"
+    },
+    {
+     "text": "Two phases (Planning, Delivery) and Sign-off is a milestone",
+     "passed": true,
+     "evidence": "phases=['Planning', 'Delivery'] signoff=0"
+    },
+    {
+     "text": "Dependencies from the 'Depends on' column resolve to the right tasks incl. the +2 days lag",
+     "passed": true,
+     "evidence": "rw=2FS so=3FS bu=4FS ua=6FS+2DAYS"
+    },
+    {
+     "text": "Resources Anas and Sara declared; Requirements workshop has both",
+     "passed": true,
+     "evidence": "declared=['Anas', 'Sara']"
+    },
+    {
+     "text": "Calendar/settings as requested (Sun–Thu, Riyadh, yyyy-MM-dd, zoom 0, only ID+Name shown)",
+     "passed": false,
+     "evidence": "{\"ww\": [\"Sunday\", \"Monday\", \"Tuesday\", \"Wednesday\", \"Thursday\"], \"shown\": [], \"zoom\": null}"
+    },
+    {
+     "text": "Dates: Kickoff on 2026-10-05 08:00 Riyadh, UAT ends 2026-11-02 17:00",
+     "passed": false,
+     "evidence": "kickoff=2026-10-05 uat_end=2026-11-02"
+    },
+    {
+     "text": "Answer gives the critical path chain and says nobody is overloaded",
+     "passed": true,
+     "evidence": "# Team Plan v1 – onlinegantt.com file, critical path and workload  ## What I produced  | File | Purpose | |---|---| | `Team Plan v1.gantt` | The plan, ready to open on onlinegantt.com (**Open (.gantt "
+    },
+    {
+     "text": "A fit-width PNG of the chart was produced (>= 1400 px wide)",
+     "passed": true,
+     "evidence": "Team Plan v1.png 1995x594 px"
+    }
+   ],
+   "notes": []
+  },
+  {
+   "eval_id": 4,
+   "configuration": "without_skill",
+   "run_number": 1,
+   "result": {
+    "pass_rate": 0.2727,
+    "passed": 3,
+    "failed": 8,
+    "total": 11,
+    "time_seconds": 428.7,
+    "tokens": 98815,
+    "tool_calls": 0,
+    "errors": 0
+   },
+   "expectations": [
+    {
+     "text": "answer.md opens with the shortcut screen (use all recommended values / ask me each question)",
+     "passed": false,
+     "evidence": "# Office relocation to Riyadh — onlinegantt plan  **What I understood:** an office move into a new building in Riyadh, in three phases (preparation → moving weekend → settling in), run by Anas, Sara a"
+    },
+    {
+     "text": "Asks the plan-specific questions: holidays, team/resources, allocation units, images, save location, file name",
+     "passed": false,
+     "evidence": "missing: holidays, allocation units, save location, file name"
+    },
+    {
+     "text": "Every question is tap-to-select: 2-4 options with a (Recommended) label on the first option (>= 8 questions with labels)",
+     "passed": true,
+     "evidence": "11 '(Recommended)' labels, ~1 question lines"
+    },
+    {
+     "text": "Multi-select is indicated where several answers apply (holidays, team, images)",
+     "passed": false,
+     "evidence": "1 multi-select notes"
+    },
+    {
+     "text": "Team question lists Anas, Sara, Khalid and the moving company",
+     "passed": true,
+     "evidence": "names present"
+    },
+    {
+     "text": "Missing durations/owners are proposed in a table and confirmed with ONE question (use proposals / corrections / task by task)",
+     "passed": false,
+     "evidence": "no proposal confirm found"
+    },
+    {
+     "text": "Draft with inferred dependencies is confirmed with one question (build as shown / list changes / walk through the links)",
+     "passed": false,
+     "evidence": "draft confirm present"
+    },
+    {
+     "text": "A .gantt file was built after the interview and validates with 0 errors",
+     "passed": false,
+     "evidence": "error: evals/results/iteration-2/eval-4-underspecified-request-interview/without_skill/run-1/outputs/office-relocation-riyadh.gantt: a .gantt file must be an object with 'data' and 'resources' (the site requires both)"
+    },
+    {
+     "text": "Built with the recommended conventions: Asia/Riyadh, bilingual names, movers as a resource, 3 phases",
+     "passed": false,
+     "evidence": "no valid .gantt (missing 'data'/'resources')"
+    },
+    {
+     "text": "File name follows '<Plan> v1 2026-09-13.gantt'",
+     "passed": false,
+     "evidence": "office-relocation-riyadh.gantt"
+    },
+    {
+     "text": "A fit-width PNG of the chart was produced (>= 1400 px wide)",
+     "passed": true,
+     "evidence": "office-relocation-riyadh-preview.png 2080x1430 px"
+    }
+   ],
+   "notes": []
+  }
+ ],
+ "run_summary": {
+  "with_skill": {
+   "pass_rate": {
+    "mean": 1.0,
+    "stddev": 0.0,
+    "min": 1.0,
+    "max": 1.0
+   },
+   "time_seconds": {
+    "mean": 206.7,
+    "stddev": 161.9209,
+    "min": 83.6,
+    "max": 441.5
+   },
+   "tokens": {
+    "mean": 91344.75,
+    "stddev": 14097.7534,
+    "min": 78225,
+    "max": 111329
+   }
+  },
+  "without_skill": {
+   "pass_rate": {
+    "mean": 0.5904,
+    "stddev": 0.3018,
+    "min": 0.2727,
+    "max": 1.0
+   },
+   "time_seconds": {
+    "mean": 586.775,
+    "stddev": 251.1622,
+    "min": 319.1,
+    "max": 831.1
+   },
+   "tokens": {
+    "mean": 145395.0,
+    "stddev": 60440.149,
+    "min": 88959,
+    "max": 209113
+   }
+  },
+  "delta": {
+   "pass_rate": "+0.41",
+   "time_seconds": "-380.1",
+   "tokens": "-54050"
+  }
+ },
+ "notes": [
+  "New in iteration 2: PNG rendering (every with-skill run produced a 1600 px fit-width image at 2x through the skill's Chromium renderer) and the tap-to-select interview. Eval 4 (under-specified request) is the discriminating test for the interview: with the skill, 11/11 - shortcut screen, plan-specific screens (dates, moving weekend, holidays, team incl. the movers, units, images, location, file name), a 24-row proposal table for the missing durations/owners with one confirm question, the draft + dependency list with one confirm question, then a valid bilingual file. Without the skill: 3/11 - eight generic questions, no proposals/confirm step, and a .gantt file that is not even the site's shape (no 'data'/'resources').",
+  "Eval 1 baseline again produced a file the site would mangle (45 validator errors: date-only strings, non-palette hues, Syncfusion-style settings, non-ISO holidays) after 12.8 minutes of reverse-engineering; the skill run took 2 minutes and is site-verified. Eval 3 baseline this time had no reference file to copy (it was told not to read the workspace) and dropped to 5/9: settings block wrong, 14 validator errors, wrong file name.",
+  "Eval 2 remains non-discriminating (10/10 both): the baseline copies the structure of the plan it is editing, which is realistic. Its PNG came from Pillow with libraqm, ours from Chromium; both pass the >= 1400 px check, so that assertion does not separate quality - the reviewer should compare the two images visually.",
+  "With-skill eval 4 made one judgement call worth a look: to show movers on a Fri-Sat while keeping a Sun-Thu working week (the site has a single calendar per file), it proposed a Sun-Sat calendar with every other weekend blocked as holidays and offered that as the recommended option. It is correct on the site but adds 11 holiday ranges; the reviewer may prefer the alternative it also offered (Thu load / Sun unload).",
+  "Time and tokens: with skill 84-441 s (eval 4 is long because it writes the whole interview) vs 319-831 s without; tokens 78-111k vs 89-209k. Timing variance without the skill stays high."
+ ]
+}

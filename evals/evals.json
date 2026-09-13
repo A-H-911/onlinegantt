@@ -1,0 +1,90 @@
+{
+  "skill_name": "onlinegantt",
+  "evals": [
+    {
+      "id": 1,
+      "name": "create-from-prose",
+      "prompt": "Create an onlinegantt.com plan (.gantt file) for launching our mobile banking app \"Wafi\". Start on Sunday 2026-11-01.\n\nPhases and tasks:\n- Discovery: stakeholder workshops (4 days, Anas) and competitor review (5 days, Sara) run in parallel from the start; then a \"Requirements sign-off\" milestone.\n- Design: UX wireframes (8 days, Layla) after sign-off; visual design (10 days, Layla) after wireframes; \"Design approved\" milestone.\n- Build: backend APIs (20 days, Omar) after design approval; mobile app (25 days, Sara) starting 5 working days after the backend starts; integration testing (8 days, Omar and Sara) after both finish.\n- Launch: UAT (5 days, Anas) after integration testing; app store submission (3 days, Sara) after UAT; \"Go-live\" milestone.\n\nThere is nobody available to answer questions, so use these answers for anything you would normally ask: timezone Asia/Riyadh; work week Sunday to Thursday; work time 08:00-12:00 and 13:00-17:00; holidays 2026-11-22 to 2026-11-23; date format dd/MM/yyyy; week starts Sunday; zoom level 1 (weekly); visible columns Task ID, Task Name, Start Date, End Date, Resources; task names bilingual English – Arabic; colour by phase; no allocation units; images: the fit-width PNG; save location is the outputs directory given to you; file name follows the skill's versioning convention, version 1.\n\nAfter building, tell me the plan's finish date, the critical path, and whether anyone is over-allocated.",
+      "expected_output": "A valid .gantt file named like 'Wafi ... v1 2026-09-13.gantt' (plus HTML preview) with 4 phases, 11 leaf tasks incl. 3 milestones, Sun–Thu calendar, holidays, dd/MM/yyyy, bilingual names, phase colours, leaf-to-leaf FS/SS links with the 5-day lag, resources Anas/Sara/Layla/Omar declared; the answer states the finish date, critical path and workload result.",
+      "files": [],
+      "assertions": [
+        "A .gantt file exists and is JSON with data/resources/advanced",
+        "Skill validator reports 0 errors (site would load it unchanged)",
+        "All StartDate/EndDate are UTC ISO strings with time (…T05:00:00.000Z)",
+        "Calendar: Sun–Thu work week, Asia/Riyadh, 8-12/13-17",
+        "Settings: dateFormat dd/MM/yyyy, firstDayOfWeek 0, zoomLevel 1",
+        "advanced.columns uses the site's 10 {name,width,show} entries with ID/Task Name/Start/End/Resources shown",
+        "Holidays 22–23 Nov stored as ISO from/to",
+        "Structure: 4 phases, 3 milestones, 9 work tasks; parents have Predecessor null",
+        "Mobile app starts 5 working days after Backend starts (SS+5 days link) and integration testing depends on both",
+        "Resources Anas/Sara/Layla/Omar declared and every assignment references a declared resource",
+        "Task names are bilingual (Arabic script and an en dash)",
+        "Colours are palette hues and differ per phase",
+        "File name follows '<Plan> v1 2026-09-13.gantt'",
+        "Answer states finish 7 Feb 2027, a critical path, and no over-allocation",
+        "A fit-width PNG of the chart was produced (>= 1400 px wide)"
+      ]
+    },
+    {
+      "id": 2,
+      "name": "edit-existing-plan",
+      "prompt": "Here is my current onlinegantt plan: evals/inputs/Website Relaunch v1 2026-09-13.gantt\n\nPlease update it:\n1. Insert a new phase \"QA – ضمان الجودة\" between Build and the Go-live milestone, with: \"Test plan – خطة الاختبار\" (3 days, Anas) after Front-end and CMS setup are both done; \"Functional testing – الاختبار الوظيفي\" (6 days, Sara) after the test plan; \"Bug fixing – إصلاح الأخطاء\" (4 days, Sara) after functional testing. Go-live must move to after bug fixing.\n2. Mark the Content audit task as 100% complete.\n3. Sara is double-booked on Front-end and CMS setup – reassign CMS setup to Anas.\n4. Keep everything else (calendar, settings, colours, ids) as it is.\n\nNobody is available to answer questions; if you need a decision, choose the option that keeps the existing dates and links. Produce the fit-width PNG as well. Save the result as the next version of the plan in the outputs directory given to you and do not modify the original file. Then tell me the new finish date and what moved.",
+      "expected_output": "A new file 'Website Relaunch v2 2026-09-13.gantt' (original untouched) containing a QA phase with the three tasks linked 10FS,11FS → test plan → functional testing → bug fixing, Go-live linked to bug fixing, Content audit progress 100, CMS setup assigned to Anas, same calendar/settings; the answer reports the new finish date.",
+      "files": [
+        "evals/inputs/Website Relaunch v1 2026-09-13.gantt"
+      ],
+      "assertions": [
+        "Output is 'Website Relaunch v2 2026-09-13.gantt' and the original file is untouched",
+        "Skill validator: 0 errors and 0 tasks drift on load",
+        "QA phase with Test plan (3d Anas), Functional testing (6d Sara), Bug fixing (4d Sara)",
+        "Links: Test plan after 10FS,11FS; Functional → Test plan; Bug fixing → Functional; Go live → Bug fixing",
+        "Content audit progress is 100",
+        "CMS setup reassigned to Anas",
+        "advanced settings identical to v1",
+        "Existing tasks 1–11 keep their ids, names, colours and dates",
+        "Answer states the new finish date 13 Dec 2026",
+        "A fit-width PNG of the chart was produced (>= 1400 px wide)"
+      ]
+    },
+    {
+      "id": 3,
+      "name": "spreadsheet-to-plan-and-questions",
+      "prompt": "My team keeps its plan in this spreadsheet export: evals/inputs/team_plan.csv\n\nTurn it into an onlinegantt.com .gantt file I can open on the site, then tell me the critical path and whether anyone is overloaded.\n\nNobody is available to answer questions, so use: timezone Asia/Riyadh, work week Sunday–Thursday, work time 08:00-12:00 and 13:00-17:00, no holidays, English only names, default colours, date format yyyy-MM-dd, week starts Sunday, zoom 0, columns Task ID and Task Name, no allocation units, images: the fit-width PNG, save to the outputs directory given to you with the skill's naming convention (version 1, plan name \"Team Plan\").",
+      "expected_output": "A valid 'Team Plan v1 2026-09-13.gantt' with 2 phases (Planning, Delivery), 5 rows incl. a Sign-off milestone, dependencies mapped from the 'Depends on' column (row numbers), resources Anas and Sara, Sun–Thu calendar; the answer gives the critical path (Kickoff → Requirements workshop → Sign-off → Build → UAT) and states nobody is overloaded.",
+      "files": [
+        "evals/inputs/team_plan.csv"
+      ],
+      "assertions": [
+        "File 'Team Plan v1 2026-09-13.gantt' exists and is JSON with data/resources/advanced",
+        "Skill validator reports 0 errors",
+        "Two phases (Planning, Delivery) and Sign-off is a milestone",
+        "Dependencies from the 'Depends on' column resolve to the right tasks incl. the +2 days lag",
+        "Resources Anas and Sara declared; Requirements workshop has both",
+        "Calendar/settings as requested (Sun–Thu, Riyadh, yyyy-MM-dd, zoom 0, only ID+Name shown)",
+        "Dates: Kickoff on 2026-10-05 08:00 Riyadh, UAT ends 2026-11-02 17:00",
+        "Answer gives the critical path chain and says nobody is overloaded",
+        "A fit-width PNG of the chart was produced (>= 1400 px wide)"
+      ]
+    },
+    {
+      "id": 4,
+      "name": "underspecified-request-interview",
+      "prompt": "Create an onlinegantt plan for relocating our office to the new building in Riyadh. Phases: preparation, the moving weekend, and settling in. The team is Anas, Sara and Khalid, plus an external moving company. We want to kick off in mid-November 2026.\n\nTest-harness note: the user is available and wants to be asked, but the AskUserQuestion tool is not available in this run. Whenever you would ask the user something, write the question screens exactly as you would present them — each screen as a heading, then each question with its 2–4 options, the recommended option first and marked (Recommended), and a note when a question is multi-select — into answer.md, in the order you would ask them. Then assume the user picked every recommended option, continue, and write the next thing you would show or ask (proposal tables, the draft for confirmation, and so on) until you reach the build step; then build and finish answer.md with your final summary. Save all outputs to the outputs directory given to you.",
+      "expected_output": "answer.md shows the interview: the shortcut screen (use all recommendations / ask each), the plan-specific screens (holidays, resources incl. Anas/Sara/Khalid/moving company, allocation units, PNG variants, save location, file name), a proposal table for the missing durations/owners with a one-question confirm, the draft table with inferred dependencies and a confirm question — every question with options and a (Recommended) label, multi-select noted. Then a valid .gantt built with the recommended values (Asia/Riyadh, Sun–Thu, bilingual names) plus HTML and fit PNG.",
+      "files": [],
+      "assertions": [
+        "answer.md opens with the shortcut screen (use all recommended values / ask me each question)",
+        "Asks the plan-specific questions: holidays, team/resources, allocation units, images, save location, file name",
+        "Every question is tap-to-select: 2-4 options with a (Recommended) label on the first option (>= 8 questions with labels)",
+        "Multi-select is indicated where several answers apply (holidays, team, images)",
+        "Team question lists Anas, Sara, Khalid and the moving company",
+        "Missing durations/owners are proposed in a table and confirmed with ONE question (use proposals / corrections / task by task)",
+        "Draft with inferred dependencies is confirmed with one question (build as shown / list changes / walk through the links)",
+        "A .gantt file was built after the interview and validates with 0 errors",
+        "Built with the recommended conventions: Asia/Riyadh, bilingual names, movers as a resource, 3 phases",
+        "File name follows '<Plan> v1 2026-09-13.gantt'",
+        "A fit-width PNG of the chart was produced (>= 1400 px wide)"
+      ]
+    }
+  ]
+}
