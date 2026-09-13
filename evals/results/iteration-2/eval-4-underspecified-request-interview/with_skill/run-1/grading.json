@@ -1,0 +1,67 @@
+{
+ "expectations": [
+  {
+   "text": "answer.md opens with the shortcut screen (use all recommended values / ask me each question)",
+   "passed": true,
+   "evidence": "# Riyadh office relocation – onlinegantt plan (interview transcript and result)  What the request settles: three phases (Preparation → Moving weekend → Settling in), the team (Anas, Sara, Khalid + an "
+  },
+  {
+   "text": "Asks the plan-specific questions: holidays, team/resources, allocation units, images, save location, file name",
+   "passed": true,
+   "evidence": "all present"
+  },
+  {
+   "text": "Every question is tap-to-select: 2-4 options with a (Recommended) label on the first option (>= 8 questions with labels)",
+   "passed": true,
+   "evidence": "13 '(Recommended)' labels, ~6 question lines"
+  },
+  {
+   "text": "Multi-select is indicated where several answers apply (holidays, team, images)",
+   "passed": true,
+   "evidence": "3 multi-select notes"
+  },
+  {
+   "text": "Team question lists Anas, Sara, Khalid and the moving company",
+   "passed": true,
+   "evidence": "names present"
+  },
+  {
+   "text": "Missing durations/owners are proposed in a table and confirmed with ONE question (use proposals / corrections / task by task)",
+   "passed": true,
+   "evidence": "proposal table + confirm present"
+  },
+  {
+   "text": "Draft with inferred dependencies is confirmed with one question (build as shown / list changes / walk through the links)",
+   "passed": true,
+   "evidence": "draft confirm present"
+  },
+  {
+   "text": "A .gantt file was built after the interview and validates with 0 errors",
+   "passed": true,
+   "evidence": "OK - valid .gantt (0 warning(s), 0 task(s) will move on load)"
+  },
+  {
+   "text": "Built with the recommended conventions: Asia/Riyadh, bilingual names, movers as a resource, 3 phases",
+   "passed": true,
+   "evidence": "tz=Asia/Riyadh phases=3 resources=['Anas', 'Khalid', 'Moving company (external)', 'Sara']"
+  },
+  {
+   "text": "File name follows '<Plan> v1 2026-09-13.gantt'",
+   "passed": true,
+   "evidence": "Riyadh Office Relocation v1 2026-09-13.gantt"
+  },
+  {
+   "text": "A fit-width PNG of the chart was produced (>= 1400 px wide)",
+   "passed": true,
+   "evidence": "Riyadh Office Relocation v1 2026-09-13.png 3216x2102 px"
+  }
+ ],
+ "passed": 11,
+ "total": 11,
+ "summary": {
+  "pass_rate": 1.0,
+  "passed": 11,
+  "failed": 0,
+  "total": 11
+ }
+}
