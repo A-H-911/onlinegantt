@@ -1,0 +1,62 @@
+{
+ "expectations": [
+  {
+   "text": "Output is 'Website Relaunch v2 2026-09-13.gantt' and the original file is untouched",
+   "passed": true,
+   "evidence": "Website Relaunch v2 2026-09-13.gantt"
+  },
+  {
+   "text": "Skill validator: 0 errors and 0 tasks drift on load",
+   "passed": true,
+   "evidence": "OK - valid .gantt (0 warning(s), 0 task(s) will move on load)"
+  },
+  {
+   "text": "QA phase with Test plan (3d Anas), Functional testing (6d Sara), Bug fixing (4d Sara)",
+   "passed": true,
+   "evidence": "qa children=['Test plan – خطة الاختبار', 'Functional testing – الاختبار الوظيفي', 'Bug fixing – إصلاح الأخطاء']"
+  },
+  {
+   "text": "Links: Test plan after 10FS,11FS; Functional → Test plan; Bug fixing → Functional; Go live → Bug fixing",
+   "passed": true,
+   "evidence": "tp=10FS,11FS ft=14FS bf=15FS go=16FS"
+  },
+  {
+   "text": "Content audit progress is 100",
+   "passed": true,
+   "evidence": "100"
+  },
+  {
+   "text": "CMS setup reassigned to Anas",
+   "passed": true,
+   "evidence": "[{'resourceId': 'Anas', 'resourceName': 'Anas', 'unit': 100}]"
+  },
+  {
+   "text": "advanced settings identical to v1",
+   "passed": true,
+   "evidence": "same"
+  },
+  {
+   "text": "Existing tasks 1–11 keep their ids, names, colours and dates",
+   "passed": true,
+   "evidence": "unchanged"
+  },
+  {
+   "text": "Answer states the new finish date 13 Dec 2026",
+   "passed": true,
+   "evidence": "Done. The updated plan is saved as **Website Relaunch v2 2026-09-13.gantt** (the original v1 file is untouched), with a fit-width chart in **Website Relaunch v2 2026-09-13.png**.  ## New finish date  "
+  },
+  {
+   "text": "A fit-width PNG of the chart was produced (>= 1400 px wide)",
+   "passed": true,
+   "evidence": "Website Relaunch v2 2026-09-13.png 2600x812 px"
+  }
+ ],
+ "passed": 10,
+ "total": 10,
+ "summary": {
+  "pass_rate": 1.0,
+  "passed": 10,
+  "failed": 0,
+  "total": 10
+ }
+}

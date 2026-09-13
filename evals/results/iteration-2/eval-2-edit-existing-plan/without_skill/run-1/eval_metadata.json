@@ -1,0 +1,17 @@
+{
+  "eval_id": 2,
+  "eval_name": "edit-existing-plan",
+  "prompt": "Here is my current onlinegantt plan: evals/inputs/Website Relaunch v1 2026-09-13.gantt\n\nPlease update it:\n1. Insert a new phase \"QA – ضمان الجودة\" between Build and the Go-live milestone, with: \"Test plan – خطة الاختبار\" (3 days, Anas) after Front-end and CMS setup are both done; \"Functional testing – الاختبار الوظيفي\" (6 days, Sara) after the test plan; \"Bug fixing – إصلاح الأخطاء\" (4 days, Sara) after functional testing. Go-live must move to after bug fixing.\n2. Mark the Content audit task as 100% complete.\n3. Sara is double-booked on Front-end and CMS setup – reassign CMS setup to Anas.\n4. Keep everything else (calendar, settings, colours, ids) as it is.\n\nNobody is available to answer questions; if you need a decision, choose the option that keeps the existing dates and links. Produce the fit-width PNG as well. Save the result as the next version of the plan in the outputs directory given to you and do not modify the original file. Then tell me the new finish date and what moved.",
+  "assertions": [
+    "Output is 'Website Relaunch v2 2026-09-13.gantt' and the original file is untouched",
+    "Skill validator: 0 errors and 0 tasks drift on load",
+    "QA phase with Test plan (3d Anas), Functional testing (6d Sara), Bug fixing (4d Sara)",
+    "Links: Test plan after 10FS,11FS; Functional → Test plan; Bug fixing → Functional; Go live → Bug fixing",
+    "Content audit progress is 100",
+    "CMS setup reassigned to Anas",
+    "advanced settings identical to v1",
+    "Existing tasks 1–11 keep their ids, names, colours and dates",
+    "Answer states the new finish date 13 Dec 2026",
+    "A fit-width PNG of the chart was produced (>= 1400 px wide)"
+  ]
+}
