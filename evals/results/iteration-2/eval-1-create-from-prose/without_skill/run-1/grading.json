@@ -1,0 +1,87 @@
+{
+ "expectations": [
+  {
+   "text": "A .gantt file exists and is JSON with data/resources/advanced",
+   "passed": true,
+   "evidence": "iteration-2/eval-1-create-from-prose/without_skill/run-1/outputs/Wafi-App-Launch-Plan-v1.gantt"
+  },
+  {
+   "text": "Skill validator reports 0 errors (site would load it unchanged)",
+   "passed": false,
+   "evidence": "45 error(s) - the site will reject or mangle this file"
+  },
+  {
+   "text": "All StartDate/EndDate are UTC ISO strings with time (…T05:00:00.000Z)",
+   "passed": false,
+   "evidence": "['2026-11-01', '2026-11-01', '2026-11-01']"
+  },
+  {
+   "text": "Calendar: Sun–Thu work week, Asia/Riyadh, 8-12/13-17",
+   "passed": true,
+   "evidence": "{\"workWeek\": [\"Sunday\", \"Monday\", \"Tuesday\", \"Wednesday\", \"Thursday\"], \"timezone\": \"Asia/Riyadh\", \"workTime\": [{\"from\": 8, \"to\": 12}, {\"from\": 13, \"to\": 17}]}"
+  },
+  {
+   "text": "Settings: dateFormat dd/MM/yyyy, firstDayOfWeek 0, zoomLevel 1",
+   "passed": false,
+   "evidence": "{\"dateFormat\": \"dd/MM/yyyy\", \"firstDayOfWeek\": \"Sunday\", \"zoomLevel\": 1}"
+  },
+  {
+   "text": "advanced.columns uses the site's 10 {name,width,show} entries with ID/Task Name/Start/End/Resources shown",
+   "passed": false,
+   "evidence": "[]"
+  },
+  {
+   "text": "Holidays 22–23 Nov stored as ISO from/to",
+   "passed": false,
+   "evidence": "[{\"from\": \"2026-11-22\", \"to\": \"2026-11-23\", \"label\": \"Holiday \\u2013 \\u0639\\u0637\\u0644\\u0629\"}]"
+  },
+  {
+   "text": "Structure: 4 phases, 3 milestones, 9 work tasks; parents have Predecessor null",
+   "passed": true,
+   "evidence": "phases=4 milestones=3 leaves=12"
+  },
+  {
+   "text": "Mobile app starts 5 working days after Backend starts (SS+5 days link) and integration testing depends on both",
+   "passed": true,
+   "evidence": "mobile=10SS+5DAYS integration=10FS,11FS"
+  },
+  {
+   "text": "Resources Anas/Sara/Layla/Omar declared and every assignment references a declared resource",
+   "passed": true,
+   "evidence": "declared=['Anas', 'Layla', 'Omar', 'Sara'] used=['Anas', 'Layla', 'Omar', 'Sara']"
+  },
+  {
+   "text": "Task names are bilingual (Arabic script and an en dash)",
+   "passed": true,
+   "evidence": "Stakeholder workshops – ورش عمل أصحاب المصلحة"
+  },
+  {
+   "text": "Colours are palette hues and differ per phase",
+   "passed": false,
+   "evidence": "[{'211'}, {'280'}, {'140'}, {'25'}]"
+  },
+  {
+   "text": "File name follows '<Plan> v1 2026-09-13.gantt'",
+   "passed": false,
+   "evidence": "Wafi-App-Launch-Plan-v1.gantt"
+  },
+  {
+   "text": "Answer states finish 7 Feb 2027, a critical path, and no over-allocation",
+   "passed": true,
+   "evidence": "The Wafi launch plan is built and saved as version 1:  - `Wafi-App-Launch-Plan-v1.gantt` — the onlinegantt.com plan (open it with **Open (.gantt file)** at onlinegantt.com) - `Wafi-App-Launch-Plan-v1.png` — fit-width PNG of the chart (weekly timeline, Sunday-start weeks, Fri/Sat and the 22–23 Nov ho"
+  },
+  {
+   "text": "A fit-width PNG of the chart was produced (>= 1400 px wide)",
+   "passed": true,
+   "evidence": "Wafi-App-Launch-Plan-v1.png 2348x752 px"
+  }
+ ],
+ "passed": 8,
+ "total": 15,
+ "summary": {
+  "pass_rate": 0.5333,
+  "passed": 8,
+  "failed": 7,
+  "total": 15
+ }
+}

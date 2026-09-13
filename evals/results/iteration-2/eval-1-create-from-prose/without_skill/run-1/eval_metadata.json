@@ -1,0 +1,22 @@
+{
+  "eval_id": 1,
+  "eval_name": "create-from-prose",
+  "prompt": "Create an onlinegantt.com plan (.gantt file) for launching our mobile banking app \"Wafi\". Start on Sunday 2026-11-01.\n\nPhases and tasks:\n- Discovery: stakeholder workshops (4 days, Anas) and competitor review (5 days, Sara) run in parallel from the start; then a \"Requirements sign-off\" milestone.\n- Design: UX wireframes (8 days, Layla) after sign-off; visual design (10 days, Layla) after wireframes; \"Design approved\" milestone.\n- Build: backend APIs (20 days, Omar) after design approval; mobile app (25 days, Sara) starting 5 working days after the backend starts; integration testing (8 days, Omar and Sara) after both finish.\n- Launch: UAT (5 days, Anas) after integration testing; app store submission (3 days, Sara) after UAT; \"Go-live\" milestone.\n\nThere is nobody available to answer questions, so use these answers for anything you would normally ask: timezone Asia/Riyadh; work week Sunday to Thursday; work time 08:00-12:00 and 13:00-17:00; holidays 2026-11-22 to 2026-11-23; date format dd/MM/yyyy; week starts Sunday; zoom level 1 (weekly); visible columns Task ID, Task Name, Start Date, End Date, Resources; task names bilingual English – Arabic; colour by phase; no allocation units; images: the fit-width PNG; save location is the outputs directory given to you; file name follows the skill's versioning convention, version 1.\n\nAfter building, tell me the plan's finish date, the critical path, and whether anyone is over-allocated.",
+  "assertions": [
+    "A .gantt file exists and is JSON with data/resources/advanced",
+    "Skill validator reports 0 errors (site would load it unchanged)",
+    "All StartDate/EndDate are UTC ISO strings with time (…T05:00:00.000Z)",
+    "Calendar: Sun–Thu work week, Asia/Riyadh, 8-12/13-17",
+    "Settings: dateFormat dd/MM/yyyy, firstDayOfWeek 0, zoomLevel 1",
+    "advanced.columns uses the site's 10 {name,width,show} entries with ID/Task Name/Start/End/Resources shown",
+    "Holidays 22–23 Nov stored as ISO from/to",
+    "Structure: 4 phases, 3 milestones, 9 work tasks; parents have Predecessor null",
+    "Mobile app starts 5 working days after Backend starts (SS+5 days link) and integration testing depends on both",
+    "Resources Anas/Sara/Layla/Omar declared and every assignment references a declared resource",
+    "Task names are bilingual (Arabic script and an en dash)",
+    "Colours are palette hues and differ per phase",
+    "File name follows '<Plan> v1 2026-09-13.gantt'",
+    "Answer states finish 7 Feb 2027, a critical path, and no over-allocation",
+    "A fit-width PNG of the chart was produced (>= 1400 px wide)"
+  ]
+}

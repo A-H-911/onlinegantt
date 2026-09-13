@@ -1,0 +1,373 @@
+{
+  "projectName": "Wafi mobile banking app launch – إطلاق تطبيق وافي للخدمات المصرفية عبر الجوال",
+  "data": [
+    {
+      "TaskID": 1,
+      "TaskName": "Discovery – الاستكشاف",
+      "StartDate": "2026-11-01",
+      "EndDate": "2026-11-05",
+      "Duration": 5,
+      "DurationUnit": "day",
+      "Progress": 0,
+      "color": "211",
+      "Predecessor": null,
+      "resources": [],
+      "info": "<p><br></p>",
+      "subtasks": [
+        {
+          "TaskID": 2,
+          "TaskName": "Stakeholder workshops – ورش عمل أصحاب المصلحة",
+          "StartDate": "2026-11-01",
+          "EndDate": "2026-11-04",
+          "Duration": 4,
+          "DurationUnit": "day",
+          "Progress": 0,
+          "color": "211",
+          "Predecessor": null,
+          "resources": [
+            {
+              "resourceId": "Anas",
+              "resourceName": "Anas"
+            }
+          ],
+          "info": "<p><br></p>"
+        },
+        {
+          "TaskID": 3,
+          "TaskName": "Competitor review – مراجعة المنافسين",
+          "StartDate": "2026-11-01",
+          "EndDate": "2026-11-05",
+          "Duration": 5,
+          "DurationUnit": "day",
+          "Progress": 0,
+          "color": "211",
+          "Predecessor": null,
+          "resources": [
+            {
+              "resourceId": "Sara",
+              "resourceName": "Sara"
+            }
+          ],
+          "info": "<p><br></p>"
+        },
+        {
+          "TaskID": 4,
+          "TaskName": "Requirements sign-off – اعتماد المتطلبات",
+          "StartDate": "2026-11-05",
+          "EndDate": "2026-11-05",
+          "Duration": 0,
+          "DurationUnit": "day",
+          "Progress": 0,
+          "color": "211",
+          "Predecessor": "2FS,3FS",
+          "resources": [],
+          "info": "<p><br></p>"
+        }
+      ]
+    },
+    {
+      "TaskID": 5,
+      "TaskName": "Design – التصميم",
+      "StartDate": "2026-11-08",
+      "EndDate": "2026-12-03",
+      "Duration": 18,
+      "DurationUnit": "day",
+      "Progress": 0,
+      "color": "280",
+      "Predecessor": null,
+      "resources": [],
+      "info": "<p><br></p>",
+      "subtasks": [
+        {
+          "TaskID": 6,
+          "TaskName": "UX wireframes – المخططات الهيكلية لتجربة المستخدم",
+          "StartDate": "2026-11-08",
+          "EndDate": "2026-11-17",
+          "Duration": 8,
+          "DurationUnit": "day",
+          "Progress": 0,
+          "color": "280",
+          "Predecessor": "4FS",
+          "resources": [
+            {
+              "resourceId": "Layla",
+              "resourceName": "Layla"
+            }
+          ],
+          "info": "<p><br></p>"
+        },
+        {
+          "TaskID": 7,
+          "TaskName": "Visual design – التصميم البصري",
+          "StartDate": "2026-11-18",
+          "EndDate": "2026-12-03",
+          "Duration": 10,
+          "DurationUnit": "day",
+          "Progress": 0,
+          "color": "280",
+          "Predecessor": "6FS",
+          "resources": [
+            {
+              "resourceId": "Layla",
+              "resourceName": "Layla"
+            }
+          ],
+          "info": "<p><br></p>"
+        },
+        {
+          "TaskID": 8,
+          "TaskName": "Design approved – اعتماد التصميم",
+          "StartDate": "2026-12-03",
+          "EndDate": "2026-12-03",
+          "Duration": 0,
+          "DurationUnit": "day",
+          "Progress": 0,
+          "color": "280",
+          "Predecessor": "7FS",
+          "resources": [],
+          "info": "<p><br></p>"
+        }
+      ]
+    },
+    {
+      "TaskID": 9,
+      "TaskName": "Build – البناء",
+      "StartDate": "2026-12-06",
+      "EndDate": "2027-01-26",
+      "Duration": 38,
+      "DurationUnit": "day",
+      "Progress": 0,
+      "color": "140",
+      "Predecessor": null,
+      "resources": [],
+      "info": "<p><br></p>",
+      "subtasks": [
+        {
+          "TaskID": 10,
+          "TaskName": "Backend APIs – واجهات برمجة التطبيقات الخلفية",
+          "StartDate": "2026-12-06",
+          "EndDate": "2026-12-31",
+          "Duration": 20,
+          "DurationUnit": "day",
+          "Progress": 0,
+          "color": "140",
+          "Predecessor": "8FS",
+          "resources": [
+            {
+              "resourceId": "Omar",
+              "resourceName": "Omar"
+            }
+          ],
+          "info": "<p><br></p>"
+        },
+        {
+          "TaskID": 11,
+          "TaskName": "Mobile app – تطبيق الجوال",
+          "StartDate": "2026-12-13",
+          "EndDate": "2027-01-14",
+          "Duration": 25,
+          "DurationUnit": "day",
+          "Progress": 0,
+          "color": "140",
+          "Predecessor": "10SS+5 days",
+          "resources": [
+            {
+              "resourceId": "Sara",
+              "resourceName": "Sara"
+            }
+          ],
+          "info": "<p><br></p>"
+        },
+        {
+          "TaskID": 12,
+          "TaskName": "Integration testing – اختبار التكامل",
+          "StartDate": "2027-01-17",
+          "EndDate": "2027-01-26",
+          "Duration": 8,
+          "DurationUnit": "day",
+          "Progress": 0,
+          "color": "140",
+          "Predecessor": "10FS,11FS",
+          "resources": [
+            {
+              "resourceId": "Omar",
+              "resourceName": "Omar"
+            },
+            {
+              "resourceId": "Sara",
+              "resourceName": "Sara"
+            }
+          ],
+          "info": "<p><br></p>"
+        }
+      ]
+    },
+    {
+      "TaskID": 13,
+      "TaskName": "Launch – الإطلاق",
+      "StartDate": "2027-01-27",
+      "EndDate": "2027-02-07",
+      "Duration": 8,
+      "DurationUnit": "day",
+      "Progress": 0,
+      "color": "25",
+      "Predecessor": null,
+      "resources": [],
+      "info": "<p><br></p>",
+      "subtasks": [
+        {
+          "TaskID": 14,
+          "TaskName": "UAT – اختبار قبول المستخدم",
+          "StartDate": "2027-01-27",
+          "EndDate": "2027-02-02",
+          "Duration": 5,
+          "DurationUnit": "day",
+          "Progress": 0,
+          "color": "25",
+          "Predecessor": "12FS",
+          "resources": [
+            {
+              "resourceId": "Anas",
+              "resourceName": "Anas"
+            }
+          ],
+          "info": "<p><br></p>"
+        },
+        {
+          "TaskID": 15,
+          "TaskName": "App store submission – التقديم إلى متاجر التطبيقات",
+          "StartDate": "2027-02-03",
+          "EndDate": "2027-02-07",
+          "Duration": 3,
+          "DurationUnit": "day",
+          "Progress": 0,
+          "color": "25",
+          "Predecessor": "14FS",
+          "resources": [
+            {
+              "resourceId": "Sara",
+              "resourceName": "Sara"
+            }
+          ],
+          "info": "<p><br></p>"
+        },
+        {
+          "TaskID": 16,
+          "TaskName": "Go-live – بدء التشغيل الفعلي",
+          "StartDate": "2027-02-07",
+          "EndDate": "2027-02-07",
+          "Duration": 0,
+          "DurationUnit": "day",
+          "Progress": 0,
+          "color": "25",
+          "Predecessor": "15FS",
+          "resources": [],
+          "info": "<p><br></p>"
+        }
+      ]
+    }
+  ],
+  "resources": [
+    {
+      "resourceId": "Anas",
+      "resourceName": "Anas"
+    },
+    {
+      "resourceId": "Sara",
+      "resourceName": "Sara"
+    },
+    {
+      "resourceId": "Layla",
+      "resourceName": "Layla"
+    },
+    {
+      "resourceId": "Omar",
+      "resourceName": "Omar"
+    }
+  ],
+  "projectStartDate": "2026-11-01",
+  "projectEndDate": "2027-02-07",
+  "advanced": {
+    "columns": [
+      {
+        "field": "TaskID",
+        "headerText": "Task ID",
+        "visible": true
+      },
+      {
+        "field": "TaskName",
+        "headerText": "Task Name",
+        "visible": true
+      },
+      {
+        "field": "StartDate",
+        "headerText": "Start Date",
+        "visible": true
+      },
+      {
+        "field": "EndDate",
+        "headerText": "End Date",
+        "visible": true
+      },
+      {
+        "field": "Duration",
+        "headerText": "Duration",
+        "visible": false
+      },
+      {
+        "field": "Progress",
+        "headerText": "Progress",
+        "visible": false
+      },
+      {
+        "field": "Predecessor",
+        "headerText": "Dependency",
+        "visible": false
+      },
+      {
+        "field": "resources",
+        "headerText": "Resources",
+        "visible": true
+      },
+      {
+        "field": "color",
+        "headerText": "Color",
+        "visible": false
+      },
+      {
+        "field": "info",
+        "headerText": "Notes",
+        "visible": false
+      }
+    ],
+    "timezone": "Asia/Riyadh",
+    "dateFormat": "dd/MM/yyyy",
+    "firstDayOfWeek": "Sunday",
+    "workWeek": [
+      "Sunday",
+      "Monday",
+      "Tuesday",
+      "Wednesday",
+      "Thursday"
+    ],
+    "workTime": [
+      {
+        "from": 8,
+        "to": 12
+      },
+      {
+        "from": 13,
+        "to": 17
+      }
+    ],
+    "holidays": [
+      {
+        "from": "2026-11-22",
+        "to": "2026-11-23",
+        "label": "Holiday – عطلة"
+      }
+    ],
+    "zoomLevel": 1,
+    "allocationUnits": false
+  }
+}
