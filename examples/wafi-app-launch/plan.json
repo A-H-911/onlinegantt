@@ -1,0 +1,44 @@
+{
+  "name": "Wafi Mobile Banking App Launch – إطلاق تطبيق وافي للخدمات المصرفية",
+  "fileStem": "Wafi Mobile Banking App Launch",
+  "version": 1,
+  "start": "2026-11-01",
+  "milestoneTime": "end",
+  "calendar": {
+    "timezone": "Asia/Riyadh",
+    "workWeek": ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday"],
+    "workTime": [{"from": 8, "to": 12}, {"from": 13, "to": 17}],
+    "holidays": [{"from": "2026-11-22", "to": "2026-11-23", "name": "Holiday – عطلة"}]
+  },
+  "settings": {
+    "dateFormat": "dd/MM/yyyy",
+    "timeFormat": "HH:mm",
+    "firstDayOfWeek": "Sunday",
+    "zoomLevel": 1,
+    "dependencyConflict": "Add Offset to Dependency",
+    "columns": ["Task ID", "Task Name", "Start Date", "End Date", "Resources"]
+  },
+  "resources": ["Anas", "Sara", "Layla", "Omar"],
+  "tasks": [
+    {"id": 1, "name": "Discovery – الاستكشاف", "children": [
+      {"id": 2, "name": "Stakeholder workshops – ورش عمل أصحاب المصلحة", "start": "2026-11-01", "duration": "4 days", "resources": ["Anas"], "color": "blue"},
+      {"id": 3, "name": "Competitor review – مراجعة المنافسين", "start": "2026-11-01", "duration": "5 days", "resources": ["Sara"], "color": "blue"},
+      {"id": 4, "name": "Requirements sign-off – اعتماد المتطلبات", "milestone": true, "deps": "2FS,3FS", "color": "blue"}
+    ]},
+    {"id": 5, "name": "Design – التصميم", "children": [
+      {"id": 6, "name": "UX wireframes – المخططات الهيكلية لتجربة المستخدم", "duration": "8 days", "deps": "4FS", "resources": ["Layla"], "color": "green"},
+      {"id": 7, "name": "Visual design – التصميم البصري", "duration": "10 days", "deps": "6FS", "resources": ["Layla"], "color": "green"},
+      {"id": 8, "name": "Design approved – اعتماد التصميم", "milestone": true, "deps": "7FS", "color": "green"}
+    ]},
+    {"id": 9, "name": "Build – البناء", "children": [
+      {"id": 10, "name": "Backend APIs – واجهات برمجة التطبيقات الخلفية", "duration": "20 days", "deps": "8FS", "resources": ["Omar"], "color": "orange"},
+      {"id": 11, "name": "Mobile app – تطبيق الجوال", "duration": "25 days", "deps": "10SS+5 days", "resources": ["Sara"], "color": "orange"},
+      {"id": 12, "name": "Integration testing – اختبار التكامل", "duration": "8 days", "deps": "10FS,11FS", "resources": ["Omar", "Sara"], "color": "orange"}
+    ]},
+    {"id": 13, "name": "Launch – الإطلاق", "children": [
+      {"id": 14, "name": "UAT – اختبار قبول المستخدم", "duration": "5 days", "deps": "12FS", "resources": ["Anas"], "color": "purple"},
+      {"id": 15, "name": "App store submission – تقديم التطبيق لمتاجر التطبيقات", "duration": "3 days", "deps": "14FS", "resources": ["Sara"], "color": "purple"},
+      {"id": 16, "name": "Go-live – الإطلاق الفعلي", "milestone": true, "deps": "15FS", "color": "purple"}
+    ]}
+  ]
+}
