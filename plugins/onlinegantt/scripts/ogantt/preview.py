@@ -131,7 +131,7 @@ def render(doc: Dict[str, Any], title: str = "Plan", today: Optional[str] = None
             label = f"{prog:g}%" if w > 34 else ""
             bar = (f'<div class="bar" style="left:{x1:.1f}px;width:{w:.1f}px;background:{bg};border-color:{dark}" title="{tip}">'
                    f'<div class="fill" style="width:{prog:.1f}%;background:{dark}"></div><span>{label}</span></div>')
-        tl_rows.append(f'<div class="row" style="background-image:{shade}">{bar}</div>')
+        tl_rows.append(f'<div class="row">{bar}</div>')
 
     # connectors
     paths = []
@@ -179,7 +179,7 @@ def render(doc: Dict[str, Any], title: str = "Plan", today: Optional[str] = None
     .hdr{{position:sticky;top:0;z-index:2;background:#f8f9fa;border-bottom:1px solid #dee2e6;height:{HEAD_H}px;box-sizing:border-box}}
     .hdr .mrow,.hdr .drow{{display:flex;height:{HEAD_H // 2}px}} .m{{border-right:1px solid #dee2e6;font-size:11px;font-weight:600;padding-left:4px;overflow:hidden;white-space:nowrap;box-sizing:border-box}}
     .d{{border-right:1px solid #eceff1;font-size:10px;text-align:center;color:#555;box-sizing:border-box;overflow:hidden}} .d.nw{{background:#f1f3f5}}
-    .row{{position:relative;height:{ROW_H}px;border-bottom:1px solid #f1f3f5;box-sizing:border-box}}
+    .row{{position:relative;height:{ROW_H}px;border-bottom:1px solid #f1f3f5;box-sizing:border-box;background-image:{shade}}}
     .bar,.pbar{{position:absolute;top:7px;height:16px;border:1px solid;border-radius:3px;box-sizing:border-box;overflow:hidden}}
     .pbar{{top:10px;height:9px;border-radius:2px}} .fill{{position:absolute;left:0;top:0;bottom:0}}
     .bar span{{position:absolute;left:0;right:0;top:0;text-align:center;font-size:10px;color:#fff;line-height:14px;text-shadow:0 0 2px rgba(0,0,0,.6)}}
