@@ -45,9 +45,9 @@ First public release. Everything below was built against the free tool at
 ### Fixed
 
 - **Windows**: `gantt.py` prints UTF-8 whatever the console code page (a redirected stdout defaulted to
-  cp1252 and crashed on the ◆ milestone marker and Arabic names) and `check.py` / the tests decode it as
-  such; the DST timezone test is skipped where no IANA database exists, and the missing-zone error now
-  also suggests the `tzdata` package.
+  cp1252 and crashed on the ◆ milestone marker and Arabic names) and `check.py`, the tests and the eval
+  grader decode it as such; the DST timezone test is skipped where no IANA database exists, and the
+  missing-zone error now also suggests the `tzdata` package.
 - CI actions moved to their Node 24 releases (`checkout@v7`, `setup-python@v7`, `upload-artifact@v7`).
 
 [1.0.0]: https://github.com/A-H-911/onlinegantt/releases/tag/v1.0.0

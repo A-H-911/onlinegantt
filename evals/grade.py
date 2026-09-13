@@ -46,7 +46,8 @@ def load(outdir):
 
 
 def validate(f):
-    p = subprocess.run([sys.executable, SK, "validate", f], capture_output=True, text=True)
+    p = subprocess.run([sys.executable, SK, "validate", f], capture_output=True, text=True, encoding="utf-8",
+                       errors="replace")
     return p.returncode, p.stdout + p.stderr
 
 
@@ -232,6 +233,9 @@ PNG_TEXT = "A fit-width PNG of the chart was produced (>= 1400 px wide)"
 
 
 def main():
+    for stream in (sys.stdout, sys.stderr):  # UTF-8 output on legacy Windows code pages
+        if hasattr(stream, "reconfigure"):
+            stream.reconfigure(encoding="utf-8", errors="replace")
     changed = 0
     graded = 0
     for ev, fn in GRADERS.items():
