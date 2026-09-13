@@ -19,8 +19,8 @@ jobs:
           - os: windows-latest
             python: "3.12"
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
+      - uses: actions/checkout@v7
+      - uses: actions/setup-python@v7
         with:
           python-version: ${{ matrix.python }}
       - name: check.py (suites, lint, examples, evals)
@@ -30,8 +30,8 @@ jobs:
     name: PNG rendering (Playwright + Chromium)
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
+      - uses: actions/checkout@v7
+      - uses: actions/setup-python@v7
         with:
           python-version: "3.12"
       - run: python -m pip install playwright && python -m playwright install --with-deps chromium
@@ -47,7 +47,7 @@ jobs:
               print(os.path.basename(f), w, h)
               assert w >= 1400 and h > 200, (f, w, h)
           PY
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v7
         with:
           name: website-relaunch-png
           path: ${{ runner.temp }}/website-relaunch*.png

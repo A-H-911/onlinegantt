@@ -42,4 +42,12 @@ First public release. Everything below was built against the free tool at
   `evals/` (four prompts, the grader, iteration-2 results: 100 % with the skill vs 59 % without),
   the marketplace manifest, logos, `CONTRIBUTING.md`, `SECURITY.md`.
 
+### Fixed
+
+- **Windows**: `gantt.py` prints UTF-8 whatever the console code page (a redirected stdout defaulted to
+  cp1252 and crashed on the ◆ milestone marker and Arabic names) and `check.py` / the tests decode it as
+  such; the DST timezone test is skipped where no IANA database exists, and the missing-zone error now
+  also suggests the `tzdata` package.
+- CI actions moved to their Node 24 releases (`checkout@v7`, `setup-python@v7`, `upload-artifact@v7`).
+
 [1.0.0]: https://github.com/A-H-911/onlinegantt/releases/tag/v1.0.0

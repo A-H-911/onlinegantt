@@ -41,7 +41,7 @@ def fail(reason: str, cmd: list | None = None) -> None:
 def run(args: list, expected: int = 0, capture: bool = False) -> str:
     cmd = [sys.executable, *args]
     print(f"$ python {' '.join(str(a) for a in args)}", flush=True)
-    p = subprocess.run(cmd, cwd=REPO, capture_output=capture, text=True)
+    p = subprocess.run(cmd, cwd=REPO, capture_output=capture, text=True, encoding="utf-8", errors="replace")
     if p.returncode != expected:
         if capture:
             print(p.stdout, p.stderr)
