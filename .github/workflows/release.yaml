@@ -1,0 +1,57 @@
+name: release
+
+# Publishing a GitHub Release (tag vX.Y.Z) builds onlinegantt.skill from the bundle and attaches it,
+# with its sha256, to that release. Re-run by hand for an existing tag with "Run workflow".
+
+on:
+  release:
+    types: [published]
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: "Existing release tag to (re)attach onlinegantt.skill to, e.g. v1.0.0"
+        required: true
+        type: string
+
+permissions:
+  contents: write
+
+jobs:
+  skill:
+    name: build and attach onlinegantt.skill
+    runs-on: ubuntu-latest
+    env:
+      TAG: ${{ github.event.release.tag_name || inputs.tag }}
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          ref: ${{ github.event.release.tag_name || inputs.tag }}
+      - uses: actions/setup-python@v7
+        with:
+          python-version: "3.12"
+      - name: check.py (suites, lint, examples, evals)
+        run: python check.py
+      - name: package the bundle as onlinegantt.skill
+        run: |
+          python - "$TAG" <<'PY'
+          import hashlib, json, os, sys, zipfile
+          tag = sys.argv[1]
+          root = os.path.join("plugins", "onlinegantt")
+          version = json.load(open(os.path.join(root, ".claude-plugin", "plugin.json"), encoding="utf-8"))["version"]
+          if tag != f"v{version}":
+              sys.exit(f"release tag {tag} does not match plugin.json version v{version}")
+          files = sorted(os.path.join(d, f) for d, _, fs in os.walk(root) for f in fs if "__pycache__" not in d)
+          with zipfile.ZipFile("onlinegantt.skill", "w", zipfile.ZIP_DEFLATED) as z:
+              for path in files:
+                  info = zipfile.ZipInfo("onlinegantt/" + os.path.relpath(path, root).replace(os.sep, "/"), date_time=(2026, 9, 13, 0, 0, 0))
+                  info.compress_type = zipfile.ZIP_DEFLATED
+                  info.external_attr = 0o644 << 16
+                  z.writestr(info, open(path, "rb").read())
+          digest = hashlib.sha256(open("onlinegantt.skill", "rb").read()).hexdigest()
+          open("onlinegantt.skill.sha256", "w").write(f"{digest}  onlinegantt.skill\n")
+          print(f"onlinegantt.skill: {len(files)} files, {os.path.getsize('onlinegantt.skill'):,} bytes, sha256 {digest}")
+          PY
+      - name: attach to the release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh release upload "$TAG" onlinegantt.skill onlinegantt.skill.sha256 --clobber

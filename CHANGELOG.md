@@ -38,7 +38,8 @@ First public release. Everything below was built against the free tool at
 - **Versioned outputs**: `<Plan name> vN YYYY-MM-DD.gantt` with `.html`, `.png` (`… (day scale).png`,
   `… (table).png`) and `.spec.json` beside it; the English half of a bilingual name is used for the file name.
 - **Repository**: `tests/` (31 cases including engine fidelity against a live dump), `check.py`,
-  CI on Python 3.9–3.13 × Linux / Windows plus a PNG rendering job, `examples/` (four real plans),
+  CI on Python 3.9–3.13 × Linux / Windows plus a PNG rendering job, a release workflow that builds and
+  attaches `onlinegantt.skill`, `examples/` (four real plans),
   `evals/` (four prompts, the grader, iteration-2 results: 100 % with the skill vs 59 % without),
   the marketplace manifest, logos, `CONTRIBUTING.md`, `SECURITY.md`.
 

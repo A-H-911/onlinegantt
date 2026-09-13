@@ -70,8 +70,10 @@ python check.py     # everything CI runs - if this is green, you are set up
 `plugin.json` carries the version; the newest `CHANGELOG.md` heading must match it and `README.md` must
 mention it (`check.py` enforces all three). Additive changes (a new command flag, a new screen, a new
 importer alias) bump MINOR; a change to the spec format, the file naming or the CLI contract bumps MAJOR
-with a note on how to migrate. A release is a tag `vX.Y.Z` with a GitHub Release that attaches
-`onlinegantt.skill` (the bundle zipped with the `.skill` extension, for hosts that import a packaged skill).
+with a note on how to migrate. A release is a tag `vX.Y.Z` with a GitHub Release; publishing it runs
+`.github/workflows/release.yaml`, which re-runs `check.py`, refuses a tag that disagrees with `plugin.json`,
+zips the bundle as `onlinegantt.skill` (for hosts that import a packaged skill) and attaches it to the
+release together with its sha256.
 
 ## Before opening a PR
 
