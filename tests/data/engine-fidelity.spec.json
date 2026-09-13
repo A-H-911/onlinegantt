@@ -1,0 +1,23 @@
+{
+  "name": "Engine fidelity test",
+  "start": "2026-10-05",
+  "calendar": {"timezone": "Asia/Riyadh", "workWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
+               "workTime": [{"from": 8, "to": 12}, {"from": 13, "to": 17}], "holidays": []},
+  "settings": {"columns": ["Task ID", "Task Name", "Start Date", "End Date"]},
+  "tasks": [
+    {"id": 1, "name": "A", "start": "2026-10-05", "duration": "5 days"},
+    {"id": 2, "name": "B slack", "start": "2026-10-19", "duration": 3, "deps": "1FS"},
+    {"id": 3, "name": "C exact", "start": "2026-10-12", "duration": 3, "deps": "1FS"},
+    {"id": 5, "name": "E no dates", "duration": 2, "deps": "1FS"},
+    {"id": 6, "name": "F hours lag", "duration": 3, "deps": "1FS+4 hours"},
+    {"id": 7, "name": "G two preds", "duration": 3, "deps": "1FS,3FS"},
+    {"id": 9, "name": "I lowercase", "duration": 3, "deps": "1fs"},
+    {"id": 10, "name": "J number only", "duration": 3, "deps": "1"},
+    {"id": 11, "name": "Offset FS+2", "duration": 3, "deps": "1FS+2 days"},
+    {"id": 12, "name": "SS link", "duration": 2, "deps": "11SS"},
+    {"id": 13, "name": "FF and SF", "duration": 3, "deps": "11FF,12SF-1 day"},
+    {"id": 14, "name": "Hours task", "start": "2026-10-12", "duration": "4 hours"},
+    {"id": 15, "name": "Weekend start", "start": "2026-10-17", "duration": 2},
+    {"id": 16, "name": "Milestone", "milestone": true, "deps": "13FS"}
+  ]
+}

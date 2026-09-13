@@ -1,0 +1,6 @@
+Phase,Task,Owner,Start,Days,Depends on,% Done,Notes
+Planning,Kickoff,Anas,05/10/2026,1,,100,
+Planning,Requirements workshop,Anas; Sara,,3,1,50,"Two sessions, room B"
+Planning,Sign-off,,,0,2,,milestone
+Delivery,Build,Sara,,10,3,,
+Delivery,UAT,Anas,,5,4FS+2 days,,

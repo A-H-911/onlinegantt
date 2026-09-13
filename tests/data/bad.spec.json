@@ -1,0 +1,4 @@
+{"name":"Bad","start":"2026-10-04","calendar":{"timezone":"Asia/Riyadh"},"tasks":[
+ {"id":1,"name":"Phase","deps":"4FS","children":[{"id":2,"name":"a","duration":2},{"id":3,"name":"b","duration":2,"deps":"1FS"}]},
+ {"id":4,"name":"x","duration":1,"deps":"9FS","resources":["Bob"]},
+ {"id":5,"name":"cyc1","duration":1,"deps":"6FS"},{"id":6,"name":"cyc2","duration":1,"deps":"5FS"}]}

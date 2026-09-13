@@ -1,0 +1,14 @@
+{"name": "Office move – انتقال المكتب", "start": "2026-11-15",
+ "calendar": {"timezone": "Asia/Riyadh", "workWeek": ["Sunday","Monday","Tuesday","Wednesday","Thursday"],
+              "workTime": [{"from": 8, "to": 12}, {"from": 13, "to": 17}], "holidays": [],
+              "workOn": ["2026-12-04", "2026-12-05"]},
+ "tasks": [
+  {"id": 1, "name": "Preparation", "children": [
+    {"id": 2, "name": "Kick-off", "start": "2026-11-15", "duration": 1, "progress": 100, "resources": ["Anas"]},
+    {"id": 3, "name": "Contract movers", "duration": 5, "deps": "2FS", "progress": 100, "resources": ["Anas"]},
+    {"id": 4, "name": "Pack", "duration": 3, "deps": "3FS", "progress": 50, "resources": ["Sara"]},
+    {"id": 5, "name": "Ready to move", "milestone": true, "deps": "3FS"}]},
+  {"id": 6, "name": "Moving weekend", "children": [
+    {"id": 7, "name": "Load & transport", "start": "2026-12-04", "duration": 1, "resources": ["Movers"]},
+    {"id": 8, "name": "Unload", "duration": 1, "deps": "7FS", "resources": ["Movers"]}]}
+ ]}
