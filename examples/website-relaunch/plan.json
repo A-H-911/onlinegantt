@@ -1,0 +1,32 @@
+{
+  "name": "Website Relaunch – إعادة إطلاق الموقع",
+  "fileStem": "Website Relaunch",
+  "version": 1,
+  "start": "2026-10-04",
+  "calendar": {
+    "timezone": "Asia/Riyadh",
+    "workWeek": ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday"],
+    "workTime": [{"from": 8, "to": 12}, {"from": 13, "to": 17}],
+    "holidays": [{"from": "2026-10-13", "to": "2026-10-14", "name": "Company offsite"}]
+  },
+  "settings": {"dateFormat": "dd/MM/yyyy", "firstDayOfWeek": "Sunday", "zoomLevel": 1,
+               "columns": ["Task ID", "Task Name", "Duration", "Resources"], "columnWidths": {"Task Name": 420}},
+  "resources": ["Anas", "Sara", "Design Studio"],
+  "tasks": [
+    {"id": 1, "name": "Discovery – الاستكشاف", "children": [
+      {"id": 2, "name": "Stakeholder interviews – مقابلات أصحاب المصلحة", "start": "2026-10-04", "duration": "4 days", "resources": ["Anas"], "progress": 100, "color": "green", "notes": "Interview 6 stakeholders.\n\nOutput: findings deck."},
+      {"id": 3, "name": "Content audit – تدقيق المحتوى", "duration": "1 week", "deps": "2SS+1 day", "resources": [{"name": "Sara", "unit": 50}], "progress": 40},
+      {"id": 4, "name": "Discovery complete – اكتمال الاستكشاف", "milestone": true, "deps": "2FS,3FS"}
+    ]},
+    {"id": 5, "name": "Design – التصميم", "children": [
+      {"id": 6, "name": "Wireframes – الإطارات الشبكية", "duration": 5, "deps": "4FS", "resources": ["Design Studio", "Anas"], "color": "purple"},
+      {"id": 7, "name": "Visual design – التصميم البصري", "duration": "8 days", "deps": "6FS+2 days", "resources": ["Design Studio"]},
+      {"id": 8, "name": "Design review – مراجعة التصميم", "duration": "2 days", "deps": "7FF", "resources": ["Anas", "Sara"]}
+    ]},
+    {"id": 9, "name": "Build – البناء", "children": [
+      {"id": 10, "name": "Front-end – الواجهة الأمامية", "duration": "3 weeks", "deps": "8FS", "resources": ["Sara"]},
+      {"id": 11, "name": "CMS setup – إعداد نظام المحتوى", "duration": "6 days", "deps": "8FS", "resources": ["Sara"]},
+      {"id": 12, "name": "Go live – الإطلاق", "milestone": true, "deps": "10FS,11FS", "color": "red"}
+    ]}
+  ]
+}

@@ -1,0 +1,13 @@
+VERIFIED - the site renders every task exactly as stored
+ok       task 1 'Discovery – الاستكشاف'
+ok       task 2 'Stakeholder interviews – مقابلات أصحاب المصلحة'
+ok       task 3 'Content audit – تدقيق المحتوى'
+ok       task 4 'Discovery complete – اكتمال الاستكشاف'
+ok       task 5 'Design – التصميم'
+ok       task 6 'Wireframes – الإطارات الشبكية'
+ok       task 7 'Visual design – التصميم البصري'
+ok       task 8 'Design review – مراجعة التصميم'
+ok       task 9 'Build – البناء'
+ok       task 10 'Front-end – الواجهة الأمامية'
+ok       task 11 'CMS setup – إعداد نظام المحتوى'
+ok       task 12 'Go live – الإطلاق'

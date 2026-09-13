@@ -1,0 +1,14 @@
+[
+{"id":1,"name":"Discovery – الاستكشاف","start":"2026-10-04T05:00:00.000Z","end":"2026-10-11T14:00:00.000Z","dur":6,"unit":"day","pred":null,"res":"","prog":66,"ms":false,"parent":true},
+{"id":2,"name":"Stakeholder interviews – مقابلات أصحاب المصلحة","start":"2026-10-04T05:00:00.000Z","end":"2026-10-07T14:00:00.000Z","dur":4,"unit":"day","pred":"","res":"Anas","prog":100,"ms":false,"parent":false},
+{"id":3,"name":"Content audit – تدقيق المحتوى","start":"2026-10-05T05:00:00.000Z","end":"2026-10-11T14:00:00.000Z","dur":5,"unit":"day","pred":"2SS+1 day","res":"Sara[50%]","prog":40,"ms":false,"parent":false},
+{"id":4,"name":"Discovery complete – اكتمال الاستكشاف","start":"2026-10-11T14:00:00.000Z","end":"2026-10-11T14:00:00.000Z","dur":0,"unit":"day","pred":"2FS,3FS","res":"","prog":0,"ms":true,"parent":false},
+{"id":5,"name":"Design – التصميم","start":"2026-10-12T05:00:00.000Z","end":"2026-11-03T14:00:00.000Z","dur":15,"unit":"day","pred":null,"res":"","prog":0,"ms":false,"parent":true},
+{"id":6,"name":"Wireframes – الإطارات الشبكية","start":"2026-10-12T05:00:00.000Z","end":"2026-10-20T14:00:00.000Z","dur":5,"unit":"day","pred":"4FS","res":"Design Studio,Anas","prog":0,"ms":false,"parent":false},
+{"id":7,"name":"Visual design – التصميم البصري","start":"2026-10-25T05:00:00.000Z","end":"2026-11-03T14:00:00.000Z","dur":8,"unit":"day","pred":"6FS+2 days","res":"Design Studio","prog":0,"ms":false,"parent":false},
+{"id":8,"name":"Design review – مراجعة التصميم","start":"2026-11-02T05:00:00.000Z","end":"2026-11-03T14:00:00.000Z","dur":2,"unit":"day","pred":"7FF","res":"Anas,Sara","prog":0,"ms":false,"parent":false},
+{"id":9,"name":"Build – البناء","start":"2026-11-04T05:00:00.000Z","end":"2026-11-24T14:00:00.000Z","dur":15,"unit":"day","pred":null,"res":"","prog":0,"ms":false,"parent":true},
+{"id":10,"name":"Front-end – الواجهة الأمامية","start":"2026-11-04T05:00:00.000Z","end":"2026-11-24T14:00:00.000Z","dur":15,"unit":"day","pred":"8FS","res":"Sara","prog":0,"ms":false,"parent":false},
+{"id":11,"name":"CMS setup – إعداد نظام المحتوى","start":"2026-11-04T05:00:00.000Z","end":"2026-11-11T14:00:00.000Z","dur":6,"unit":"day","pred":"8FS","res":"Sara","prog":0,"ms":false,"parent":false},
+{"id":12,"name":"Go live – الإطلاق","start":"2026-11-24T14:00:00.000Z","end":"2026-11-24T14:00:00.000Z","dur":0,"unit":"day","pred":"10FS,11FS","res":"","prog":0,"ms":true,"parent":false}
+]
