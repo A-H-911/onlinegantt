@@ -15,5 +15,8 @@ Thumbs.db
 /scratch/
 *.tmp
 
+# fonts the logo builder fetches (OFL, from google/fonts)
+/docs/logo/fonts/
+
 # packaged bundle: attached to GitHub Releases, not committed
 /onlinegantt.skill

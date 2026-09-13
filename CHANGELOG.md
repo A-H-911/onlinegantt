@@ -42,6 +42,12 @@ First public release. Everything below was built against the free tool at
   `evals/` (four prompts, the grader, iteration-2 results: 100 % with the skill vs 59 % without),
   the marketplace manifest, logos, `CONTRIBUTING.md`, `SECURITY.md`.
 
+### Changed
+
+- **Logo** redrawn: a rounded tile mark (three bars and an amber milestone), a two-tone wordmark, and the
+  tagline and Arabic line outlined from Inter and Noto Sans Arabic (SIL OFL), so the three SVGs render the
+  same everywhere instead of depending on installed fonts. `docs/logo/build_logo.py` regenerates them.
+
 ### Fixed
 
 - **Windows**: `gantt.py` prints UTF-8 whatever the console code page (a redirected stdout defaulted to
