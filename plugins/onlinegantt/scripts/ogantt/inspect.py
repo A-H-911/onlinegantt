@@ -84,7 +84,7 @@ def summary(doc: Dict[str, Any], today: Optional[str] = None, workload: bool = T
         lines.append("|---:|---|---|---|---|---:|---|---|---|")
         for r in rows:
             t = r["t"]
-            indent = "  " * r["depth"]
+            indent = "  " * r["depth"]
             name = indent + ("**" + r["name"] + "**" if not r["leaf"] else ("◆ " + r["name"] if r["ms"] else r["name"]))
             lines.append(f"| {r['id']} | {name} | {r['start']:%Y-%m-%d} | {r['end']:%Y-%m-%d} | {_dur_txt(t)} | "
                          f"{float(t.get('Progress', 0)):g} | {t.get('Predecessor') or ''} | {_res_txt(t)} | "
