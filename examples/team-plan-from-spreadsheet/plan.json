@@ -1,0 +1,106 @@
+{
+  "name": "Team Plan",
+  "start": "2026-10-05",
+  "calendar": {
+    "timezone": "Asia/Riyadh",
+    "workWeek": [
+      "Sunday",
+      "Monday",
+      "Tuesday",
+      "Wednesday",
+      "Thursday"
+    ],
+    "workTime": [
+      {
+        "from": 8,
+        "to": 12
+      },
+      {
+        "from": 13,
+        "to": 17
+      }
+    ],
+    "holidays": []
+  },
+  "settings": {
+    "columns": [
+      "Task ID",
+      "Task Name"
+    ]
+  },
+  "tasks": [
+    {
+      "name": "Planning",
+      "children": [
+        {
+          "name": "Kickoff",
+          "id": 2,
+          "start": "2026-10-05",
+          "duration": "1 day",
+          "progress": 100.0,
+          "resources": [
+            "Anas"
+          ]
+        },
+        {
+          "name": "Requirements workshop",
+          "id": 3,
+          "duration": "3 days",
+          "progress": 50.0,
+          "deps": "2",
+          "resources": [
+            "Anas",
+            "Sara"
+          ],
+          "notes": "Two sessions, room B"
+        },
+        {
+          "name": "Sign-off",
+          "id": 4,
+          "deps": "3",
+          "notes": "milestone",
+          "milestone": true
+        }
+      ],
+      "id": 1
+    },
+    {
+      "name": "Delivery",
+      "children": [
+        {
+          "name": "Build",
+          "id": 6,
+          "duration": "10 days",
+          "deps": "4",
+          "resources": [
+            "Sara"
+          ]
+        },
+        {
+          "name": "UAT",
+          "id": 7,
+          "duration": "5 days",
+          "deps": "6FS+2 days",
+          "resources": [
+            "Anas"
+          ]
+        }
+      ],
+      "id": 5
+    }
+  ],
+  "_import_warnings": [],
+  "_import_note": "calendar/settings are placeholders - confirm them with the user before building",
+  "_ambiguous_dates": [
+    "05/10/2026"
+  ],
+  "_ambiguous_dates_note": "these values could be day-first or month-first; read as day-first - ask the user, re-run with --month-first if needed",
+  "_id_map": {
+    "1": 2,
+    "2": 3,
+    "3": 4,
+    "4": 6,
+    "5": 7
+  },
+  "_id_map_note": "spreadsheet row/ID -> task id after top-down renumbering (links already remapped)"
+}
